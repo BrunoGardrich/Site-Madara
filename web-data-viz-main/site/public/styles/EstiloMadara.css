@@ -1,0 +1,148 @@
+.body {
+    margin: 0;
+}
+
+.banner {
+    height: 525px;
+    width: 100%;
+    margin: auto;
+    }
+.banner .container {
+    height: 300px;
+    width: 80%;
+    margin: auto;
+   
+}
+
+.banner img {
+    height: 100%;
+    position: absolute;
+    width: 100%;
+
+}
+
+.social {
+    height: 1500px;
+    margin: auto;
+    background-image: url(../Assets/vale.jpg);
+    background-position: bottom;
+    background-repeat: no-repeat;
+}
+.social img {
+    margin: auto;
+    width: 100%;
+    height: 1500px;
+    position: absolute;
+}
+
+.social .container {
+    height: 100%;
+    margin: auto;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+.social .container .galeria{
+    border: solid purple 3px;
+    height: 700px;
+    width: 1300px;
+    justify-content: space-between;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: blueviolet;
+    border-radius: 20px;
+
+    
+}
+.social .container .galeria .foto1{
+    border: solid 3px black;
+    width: 30%;
+    height: 300px;
+    justify-content: space-between;
+    margin: 5px;
+    border-radius: 10px;
+    
+}
+.social .container .galeria .foto2{
+    border: solid 3px black;
+    width: 30%;
+    height: 300px;
+    justify-content: space-between;
+    margin: 5px;
+    border-radius: 10px;
+
+}
+.social .container .galeria .foto3{
+    border: solid 3px black;
+    width: 30%;
+    height: 300px;
+    justify-content: space-between;
+    margin: 5px;
+    border-radius: 10px;
+
+}
+.social .container .galeria .foto4{
+    border: solid 3px black;
+    width: 30%;
+    height: 300px;
+    justify-content: space-between;
+    margin: 5px;
+    border-radius: 10px;
+
+}
+.social .container .galeria .foto5{
+    border: solid 3px black;
+    width: 30%;
+    height: 300px;
+    justify-content: space-between;
+    margin: 5px;
+    border-radius: 10px;
+
+}
+
+.social .container .galeria .foto6{
+    border: solid 3px black;
+    width: 30%;
+    height: 300px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    margin: 5px;
+    border-radius: 10px;
+}
+
+.foto1 img {
+    max-height: 300px;
+    width: 323px;
+    border-radius: 10px;
+    margin: auto;
+}
+.foto2 img {
+    max-height: 300px;
+    width: 322px;
+    border-radius: 10px;
+}
+.foto3 img {
+    max-height: 300px;
+    width: 322px;
+    border-radius: 10px;
+}
+.foto4 img {
+    max-height: 300px;
+    width: 322px;
+    border-radius: 10px;
+}
+.foto5 img {
+    max-height: 300px;
+    width: 322px;
+    border-radius: 10px;
+}
+.foto6 img {
+    max-height: 300px;
+    width: 322px;
+    border-radius: 10px;
+}
+
+
+

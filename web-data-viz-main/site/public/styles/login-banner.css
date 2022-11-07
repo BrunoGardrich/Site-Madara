@@ -1,0 +1,85 @@
+body {
+    margin: 0ex;
+}
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+    -webkit-border-radius: 16px;
+  }
+  
+  ::-webkit-scrollbar-track-piece {
+    background-color: #ffffff;
+    -webkit-border-radius: 3px;
+  }
+  
+  ::-webkit-scrollbar-thumb:vertical {
+    height: 5px;
+    background-color: #666;
+    -webkit-border-radius: 3px;
+  }
+  
+
+.banner {
+    height: 1080px;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: top;
+    background-image: url(../Assets/obito\ e\ madara.jpg);
+    
+    }
+.banner .container {
+    border: black solid 3px;
+    height: 200px;
+    width: 350px;
+    justify-content: center;
+    margin: auto;
+    background-color: red;
+    border-radius: 30px;
+
+}
+
+.banner .container h2{
+    justify-content: center;
+    display: flex;
+    margin-bottom: 0;
+}
+.banner .container .ipt{
+    justify-content: center;
+    display: flex;
+    margin:auto;
+    width: 50%;
+    height: 20px;
+
+}
+
+.banner img {
+    position: absolute;
+    height:  700px;
+    width: 100%;
+    
+}
+
+.loading-div {
+    width: 50px;
+    margin: auto;
+    display: none;
+  }
+  
+  .loading-div img {
+    height: 50px;
+    width: 50px;
+  }
+
+  .btn {
+    display: flex;
+    width: 50%;
+    justify-content: center;
+    border-radius: 10px;
+    margin-left: 25%;
+    margin-top: 5%;
+ 
+  }
+

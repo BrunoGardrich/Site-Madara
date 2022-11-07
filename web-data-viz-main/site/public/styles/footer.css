@@ -1,0 +1,14 @@
+.footer {
+    border: orange solid 3px;
+    height: 100px;
+    background-color: purple;
+    width: 100%;
+    bottom: 0;
+}
+.footer .container {
+    border: blue solid 3px;
+    margin: auto;
+    height: 90%;
+    width: 90%;
+
+}
