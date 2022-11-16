@@ -3,14 +3,14 @@ body {
 }
 
 .banner {
-  height: 700px;
+  height: 600px;
   width: 100%;
   margin: auto;
   display: flex;
-  background-size: contain;
+  background-size: 1350px;
   background-repeat: no-repeat;
   background-position: top;
-  background-image: url(../Assets/madara\ e\ hashirama.gif);
+  background-image: url(../Assets/vale.jpg);
 
 }
 
@@ -22,7 +22,7 @@ body {
   margin: auto;
   background-color: rgb(56, 14, 59);
   border-radius: 30px;  
-  margin-bottom: 300px;
+  margin-top: 100px;
 
 }
 

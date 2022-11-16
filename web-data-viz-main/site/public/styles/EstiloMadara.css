@@ -62,8 +62,8 @@ html {
 }
 
 .imgs2 img {
-    width: 1500px;
-    height: 700px;
+    width: 1800px;
+    height: 800px;
 }
 
 
@@ -175,8 +175,8 @@ html {
 
 .social2 {
     height: 1300px;
-    background-image: url(../assets/953469.png);
-    background-size: 1400px;
+    background-image: url(../assets/fases.jpg);
+    background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
 }
