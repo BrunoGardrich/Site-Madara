@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./js/funcoes.js"></script>
     <link rel="stylesheet" href="styles/Header-Footer.css">
     <link rel="stylesheet" href="styles/cadastro-banner.css">
     <title>Document</title>
@@ -11,12 +12,13 @@
 <body>
     <div class="header">
         <div class="container">
-            <li>UCHIHA MADARA</li>
+            <li>Uchiha Madara</li>
             <div class="navbar">
-                    <li><a href="Madara.html">inicio</a></li>
+                    <li><a href="index.html">inicio</a></li>
+                    <li><a href="galeria.html">Galeria</li>
                     <li><a href="Login-Madara.html">Login</li>
-                    <li>Cadastrar</a></li>
-                    <li>:)</li>
+                    <li class="aqui">Cadastrar</a></li>
+                    <li><a href="Quiz-madara.html">Quiz</a></li>
                 
             </div>
         </div>
@@ -26,11 +28,12 @@
             <h2>Login</h2>
             <input class="ipt" type="text" name="" id="ipt_nome" placeholder="Coloque seu Nome">
             <h2>Email</h2>
-            <input class="ipt" type="email" name="" id="ipt_nome" placeholder="Coloque seu Email">
+            <input class="ipt" type="email" name="" id="ipt_email" placeholder="Coloque seu Email">
             <h2>Senha</h2>
-            <input class="ipt" type="password" name="" id="ipt_senha" placeholder="*******">
+            <input class="ipt" type="password" name="" id="ipt_senha1" placeholder="*******">
             <h2>Confirmar Senha</h2>
-            <input class="ipt" type="password" name="" id="ipt_senha" placeholder="*******">
+            <input class="ipt" type="password" name="" id="ipt_senha2" placeholder="*******">
+
             <button class="btn" onclick="cadastrar()">Cadastrar</button>
 
         </div>
@@ -54,15 +57,14 @@
 <script>
     function cadastrar() {
         aguardar();
-
         //Recupere o valor da nova input pelo nome do id
         // Agora vá para o método fetch logo abaixo
-        var nomeVar = nome_input.value;
-        var emailVar = email_input.value;
-        var senhaVar = senha_input.value;
-        var confirmacaoSenhaVar = confirmacao_senha_input.value;
+        var nome = ipt_nome.value;
+        var email = ipt_email.value;
+        var senha = ipt_senha1.value;
+        var confirmacaoSenha = ipt_senha2.value;
 
-        if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
+        if (nome == "" || email == "" || senha == "" || confirmacaoSenha == "") {
             cardErro.style.display = "block"
             mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
 
@@ -82,9 +84,9 @@
             body: JSON.stringify({
                 // crie um atributo que recebe o valor recuperado aqui
                 // Agora vá para o arquivo routes/usuario.js
-                nomeServer: nomeVar,
-                emailServer: emailVar,
-                senhaServer: senhaVar
+                nomeServer: nome,
+                emailServer: email,
+                senhaServer: senha
             })
         }).then(function (resposta) {
 
@@ -96,7 +98,7 @@
                 mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
 
                 setTimeout(() => {
-                    window.location = "login.html";
+                    window.location = "Login-Madara.html";
                 }, "2000")
                 
                 limparFormulario();

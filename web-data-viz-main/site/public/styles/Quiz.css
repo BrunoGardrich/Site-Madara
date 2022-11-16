@@ -1,0 +1,87 @@
+.social {
+    display: flex;
+    justify-content: center;
+    background-image: url(../assets/1119223.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.social .container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: auto;
+    width: 80%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+
+.social .quiz {
+    border: solid 3px black;
+    width: 800px;
+    height: 400px;
+}
+
+.social .quiz2 button{
+    margin-top: 50px;
+    height: 30px;
+    width: 150px;
+    
+}
+.social .quiz3 button{
+    margin-top: 50px;
+    height: 30px;
+    width: 150px;
+    display: none;
+    
+}
+.social .quiz4 button{
+    margin-top: 50px;
+    height: 30px;
+    width: 150px;
+    display: none;
+    
+}
+.social .quiz5 button{
+    margin-top: 50px;
+    height: 30px;
+    width: 150px;
+    display: none;
+    
+}
+.social .quiz6 button{
+    margin-top: 50px;
+    height: 30px;
+    width: 150px;
+    display: none;
+    
+}
+.social .quiz7 button{
+    margin-top: 50px;
+    height: 30px;
+    width: 150px;
+    display: none;
+    
+}
+.social .quiz8 button{
+    margin-top: 50px;
+    height: 30px;
+    width: 150px;
+    display: none;
+    
+}
+.social .quiz9 button{
+    margin-top: 50px;
+    height: 30px;
+    width: 150px;
+    display: none;
+    
+}
+.social .quiz10 button{
+    margin-top: 50px;
+    height: 30px;
+    width: 150px;
+    display: none;
+    
+}

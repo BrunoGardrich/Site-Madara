@@ -1,6 +1,11 @@
 body {
     margin: 0;
 }
+
+#aqui{
+  color: red;
+}
+
 .header {
     height: 80px;
     background-color:  rgb(45, 26, 49);
@@ -12,18 +17,15 @@ body {
 ::-webkit-scrollbar {
     width: 10px;
     height: 10px;
-    -webkit-border-radius: 16px;
   }
   
   ::-webkit-scrollbar-track-piece {
     background-color: #ffffff;
-    -webkit-border-radius: 3px;
   }
   
   ::-webkit-scrollbar-thumb:vertical {
     height: 5px;
     background-color: #666;
-    -webkit-border-radius: 3px;
   }
 .header .container{
     margin: auto;
@@ -54,6 +56,10 @@ body {
     text-decoration: none;
     color: white;
 
+}
+
+html{
+  overflow-x: hidden;
 }
 
 

@@ -1,22 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="./js/funcoes.js"></script>
     <link rel="stylesheet" href="styles/Header-Footer.css">
     <link rel="stylesheet" href="styles/login-banner.css">
+    <link rel="stylesheet" href="styles/footer.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
     <title>Document</title>
 </head>
 <body>
     <div class="header">
         <div class="container">
-            <li>UCHIHA MADARA</li>
+            <li>Uchiha Madara</li>
             <div class="navbar">
-                    <li><a href="Madara.html">inicio</a></li>
-                    <li>Login</li>
+                    <li><a href="index.html">inicio</a></li>
+                    <li><a href="galeria.html">Galeria</li>
+                    <li id="aqui">Login</li>
                     <li><a href="Cadastrar-Madara.html">Cadastrar</a></li>
-                    <li>:)</li>    
+                    <li><a href="Quiz-madara.html">Quiz</a></li>    
             </div>
         </div>
     </div>
@@ -24,7 +29,7 @@
     <div class="banner">
         <div class="container">
             <h2>Login</h2>
-            <input class="ipt" type="text" name="" id="ipt_nome" placeholder="Coloque seu nome">
+            <input class="ipt" type="text" name="" id="ipt_email" placeholder="Coloque seu email">
             <h2>Senha</h2>
             <input class="ipt" type="password" name="" id="ipt_senha" placeholder="******">
 
@@ -56,10 +61,10 @@
     function entrar() {
         aguardar();
 
-        var emailVar = email_input.value;
-        var senhaVar = senha_input.value;
+        var email = ipt_email.value;
+        var senha = ipt_senha.value;
 
-        if (emailVar == "" || senhaVar == "") {
+        if (email == "" || senha == "") {
             cardErro.style.display = "block"
             mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
             finalizarAguardar();
@@ -69,8 +74,8 @@
             setInterval(sumirMensagem, 5000)
         }
 
-        console.log("FORM LOGIN: ", emailVar);
-        console.log("FORM SENHA: ", senhaVar);
+        console.log("FORM LOGIN: ", email);
+        console.log("FORM SENHA: ", senha);
 
         fetch("/usuarios/autenticar", {
             method: "POST",
@@ -78,8 +83,8 @@
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                emailServer: emailVar,
-                senhaServer: senhaVar
+                emailServer: email,
+                senhaServer: senha
             })
         }).then(function (resposta) {
             console.log("ESTOU NO THEN DO entrar()!")
@@ -96,7 +101,7 @@
                     sessionStorage.ID_USUARIO = json.id;
 
                     setTimeout(function () {
-                        window.location = "./dashboard/cards.html";
+                        window.location = "Quiz-madara.html";
                     }, 1000); // apenas para exibir o loading
 
                 });

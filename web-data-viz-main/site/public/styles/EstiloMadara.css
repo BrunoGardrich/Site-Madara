@@ -2,147 +2,181 @@
     margin: 0;
 }
 
+html {
+    background-color: black;
+}
+
 .banner {
     height: 525px;
     width: 100%;
     margin: auto;
-    }
-.banner .container {
-    height: 300px;
-    width: 80%;
-    margin: auto;
-   
-}
-
-.banner img {
-    height: 100%;
-    position: absolute;
-    width: 100%;
-
-}
-
-.social {
-    height: 1500px;
-    margin: auto;
-    background-image: url(../Assets/vale.jpg);
-    background-position: bottom;
-    background-repeat: no-repeat;
-}
-.social img {
-    margin: auto;
-    width: 100%;
-    height: 1500px;
-    position: absolute;
-}
-
-.social .container {
-    height: 100%;
-    margin: auto;
-    width: 80%;
     display: flex;
     justify-content: center;
-    align-items: flex-end;
+    background-image: url(../assets/1110120.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right;
+
 }
-.social .container .galeria{
-    border: solid purple 3px;
-    height: 700px;
-    width: 1300px;
-    justify-content: space-between;
+
+.banner .container {
+    border: yellow solid 3px;
+    height: 300px;
+    width: 50%;
+    margin: auto;
+
+}
+
+.imgs {
+    border: solid 3px green;
+    width: 30%;
+    justify-content: center;
     display: flex;
-    flex-wrap: wrap;
-    background-color: blueviolet;
-    border-radius: 20px;
-
-    
-}
-.social .container .galeria .foto1{
-    border: solid 3px black;
-    width: 30%;
-    height: 300px;
-    justify-content: space-between;
-    margin: 5px;
-    border-radius: 10px;
-    
-}
-.social .container .galeria .foto2{
-    border: solid 3px black;
-    width: 30%;
-    height: 300px;
-    justify-content: space-between;
-    margin: 5px;
-    border-radius: 10px;
-
-}
-.social .container .galeria .foto3{
-    border: solid 3px black;
-    width: 30%;
-    height: 300px;
-    justify-content: space-between;
-    margin: 5px;
-    border-radius: 10px;
-
-}
-.social .container .galeria .foto4{
-    border: solid 3px black;
-    width: 30%;
-    height: 300px;
-    justify-content: space-between;
-    margin: 5px;
-    border-radius: 10px;
-
-}
-.social .container .galeria .foto5{
-    border: solid 3px black;
-    width: 30%;
-    height: 300px;
-    justify-content: space-between;
-    margin: 5px;
-    border-radius: 10px;
-
+    align-items: center;
 }
 
-.social .container .galeria .foto6{
-    border: solid 3px black;
-    width: 30%;
+.imgs img {
+    width: 300px;
     height: 300px;
+}
+
+
+
+.social {
+    width: 100%;
+    background-color: rgb(44, 13, 49);
+    border: red solid 3px;
     display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    margin: 5px;
-    border-radius: 10px;
 }
 
-.foto1 img {
-    max-height: 300px;
-    width: 323px;
+.social .img2{
+    border: solid 3px purple;
+    justify-content: flex-start;
     border-radius: 10px;
     margin: auto;
+    width: 300%;
+    height: 700px;
+    display: flex;
+    color: white;
+    flex-direction: column;
 }
-.foto2 img {
-    max-height: 300px;
-    width: 322px;
-    border-radius: 10px;
-}
-.foto3 img {
-    max-height: 300px;
-    width: 322px;
-    border-radius: 10px;
-}
-.foto4 img {
-    max-height: 300px;
-    width: 322px;
-    border-radius: 10px;
-}
-.foto5 img {
-    max-height: 300px;
-    width: 322px;
-    border-radius: 10px;
-}
-.foto6 img {
-    max-height: 300px;
-    width: 322px;
-    border-radius: 10px;
+
+.imgs2 img {
+    width: 1500px;
+    height: 700px;
 }
 
 
 
+.historia {
+    border: solid 3px purple;
+    justify-content: flex-start;
+    border-radius: 10px;
+    margin: auto;
+    width: 90%;
+    height: 400px;
+    display: flex;
+    color: white;
+    flex-direction: column;
+
+
+}
+
+
+
+.social3 .container {
+    border: black solid 3px;
+    height: 500px;
+    margin: auto;
+    width: 80%;
+    display: flex;
+}
+
+
+.container ul {
+    border: solid 3px green;
+    width: 100%;
+    height: 400px;
+    list-style: none;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: black;
+
+}
+
+.container .box {
+    visibility: hidden;
+    opacity: 0;
+    display: none;
+
+}
+
+.container .box:target {
+    opacity: 1;
+    visibility: visible;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(10, 10, 10, .7);
+    position: fixed;
+    display: block;
+}
+
+.container .foto {
+    width: 200px;
+    height: 150px;
+    padding: 5px;
+
+
+}
+
+.container .box .galeria {
+    width: 1000px;
+    margin: 150px;
+
+}
+
+.btn {
+    color: white;
+    font-family: Arial;
+    text-decoration: none;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    font-size: 40px;
+    text-align: center;
+
+}
+
+#prev {
+    left: 5%;
+    top: 45%;
+}
+
+#next {
+    right: 5%;
+    top: 45%;
+}
+
+#close {
+    top: 0;
+    right: 2%;
+}
+
+.box:target .galeria img {
+    opacity: 1;
+    transition: opacity .4s linear;
+    width: 1050px;
+    height: 450px;
+    align-items: top;
+}
+
+.social2 {
+    height: 1300px;
+    background-image: url(../assets/953469.png);
+    background-size: 1400px;
+    background-repeat: no-repeat;
+    background-position: center;
+}

@@ -1,13 +1,13 @@
 body {
-   background: linear-gradient(black,white,purple,red); 
+   background-color: gray; 
 }
 .banner {
     height: 800px;
     width: 100%;
     margin: auto;
     display: flex;
-    background: url(../Assets/XAB2.gif);
-    background-size: 60rem;
+    background: url(../Assets/1233741.png);
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: left;
     
@@ -17,7 +17,8 @@ body {
     border: black solid 3px;
     height: 425px;
     width: 275px;
-    margin-left: 75%;
+    margin-right: 300px;
+    margin-left: 5%;
     margin-top: 10%;
     display: flex;
     justify-content: center;

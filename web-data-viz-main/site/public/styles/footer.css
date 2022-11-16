@@ -1,12 +1,10 @@
 .footer {
-    border: orange solid 3px;
-    height: 100px;
-    background-color: purple;
+    height: 60px;
+    background-color:  rgb(45, 26, 49);
     width: 100%;
     bottom: 0;
 }
 .footer .container {
-    border: blue solid 3px;
     margin: auto;
     height: 90%;
     width: 90%;
