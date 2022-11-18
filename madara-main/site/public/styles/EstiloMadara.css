@@ -1,0 +1,284 @@
+.body {
+    margin: 0;
+}
+
+html {
+    background-color: black;
+}
+
+.banner {
+    height: 700px;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: left;
+    background-image: url(../assets/Madara-uchiha.jpg);
+    background-size: 100vw;
+    background-repeat: no-repeat;
+    background-position: center;
+
+}
+
+.banner .container {
+    border: yellow solid 3px;
+    height: 525px;
+    width: 53%;
+    margin-left: 0;
+
+}
+
+.banner .container img{
+    width: 100%;
+    height: 100%;
+}
+
+.imgs {
+    border: solid 3px green;
+    width: 30%;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    margin-right: 30px;
+}
+
+.imgs img {
+    width: 350px;
+    height: 300px;
+}
+
+
+
+.social {
+    width: 100%;
+    background-color: rgb(44, 13, 49);
+    border: red solid 3px;
+    display: flex;
+    
+}
+
+.social .img2{
+    border: solid 3px purple;
+    justify-content: flex-start;
+    border-radius: 10px;
+    margin: auto;
+    width: 300%;
+    height: 700px;
+    display: flex;
+    color: white;
+    flex-direction: column;
+}
+
+.imgs2 img {
+    width: 900px;
+    height: 500px;
+}
+
+
+
+.historia {
+    border: solid 3px purple;
+    justify-content: flex-start;
+    border-radius: 10px;
+    margin: auto;
+    width: 90%;
+    height: 400px;
+    display: flex;
+    color: white;
+    flex-direction: column;
+    margin-top: 30px;
+}
+
+.historia2{
+    border: yellow 3px solid;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    color: white;
+}
+
+
+.social2 {
+    height: 900px;
+    background-image: url(../assets/712113.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.social3{
+    height: 900px;
+    background-image: url(../assets/quiz.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    justify-content:end;
+    align-items: center;
+    width: 100%;
+
+}
+.social3 .container{
+    border: solid 3px green;
+    display: flex;
+    margin-right: 200px;
+    height: 120px;
+    width: 400px;
+    font-size: x-large;
+    color: white;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.social4{
+    height: 900px;
+    background-image: url(../assets/madara-interaçao.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    justify-content:start;
+    align-items: center;
+    width: 100%;
+
+}
+.social4 .container{
+    border: solid 3px green;
+    display: flex;
+    margin-left: 200px;
+    height: 120px;
+    width: 400px;
+    font-size: x-large;
+    color: white;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.social5{
+    height: 400px;
+    background-image: url(../assets/madara-folha.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right;
+    display: flex;
+    justify-content:start;
+    align-items: center;
+    width: 100%;
+
+}
+.social5 .container{
+    border: solid 3px green;
+    display: flex;
+    margin-right: 200px;
+    height: 400px;
+    width: 800px;
+    font-size: x-large;
+    color: white;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.social5 .container img{
+    position: absolute;
+    height: 400px;
+    width: 850px;
+}
+
+.social3 .container #aqui2{
+    list-style-type: none;
+    color: red;
+    display: flex;
+    font-size: x-large;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+
+.social6 .container {
+    border: black solid 3px;
+    height: 500px;
+    margin: auto;
+    width: 80%;
+    display: flex;
+}
+
+
+.container ul {
+    border: solid 3px red;
+    width: 100%;
+    height: 400px;
+    list-style: none;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    background-color:rgb(44, 13, 49);
+
+
+}
+
+.container .box {
+    visibility: hidden;
+    opacity: 0;
+    display: none;
+
+}
+
+.container .box:target {
+    opacity: 1;
+    visibility: visible;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(10, 10, 10, .7);
+    position: fixed;
+    display: block;
+}
+
+.container .foto {
+    width: 200px;
+    height: 150px;
+    padding: 5px;
+
+
+}
+
+.container .box .galeria {
+    width: 1000px;
+    margin: 150px;
+
+}
+
+.btn {
+    color: white;
+    font-family: Arial;
+    text-decoration: none;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    font-size: 40px;
+    text-align: center;
+
+}
+
+#prev {
+    left: 5%;
+    top: 45%;
+}
+
+#next {
+    right: 5%;
+    top: 45%;
+}
+
+#close {
+    top: 0;
+    right: 2%;
+}
+
+.box:target .galeria img {
+    opacity: 1;
+    transition: opacity .4s linear;
+    width: 1050px;
+    height: 450px;
+    align-items: top;
+}

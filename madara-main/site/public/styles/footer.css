@@ -8,5 +8,9 @@
     margin: auto;
     height: 90%;
     width: 90%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
 }

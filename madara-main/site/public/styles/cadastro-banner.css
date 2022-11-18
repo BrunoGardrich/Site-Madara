@@ -23,8 +23,9 @@ body {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    background-color: blueviolet;
+    background:linear-gradient(black,red);
     border-radius: 20px;
+    color: white;
    
 }
 
