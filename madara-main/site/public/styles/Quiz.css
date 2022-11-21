@@ -1,18 +1,25 @@
+body {
+    background-color: grey;
+}
+
 .social {
+    border: #1b4486 solid 3px;
     display: flex;
-    justify-content: center;
     background-image: url(../assets/1119223.jpg);
     background-position: center;
     background-size: cover;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
 }
 
-.social .container {
+/* .social .container {
     display: flex;
     align-items: center;
     flex-direction: column;
     margin: auto;
     width: 80%;
-    margin-top: 50px;
+    margin-top: 300px;
     margin-bottom: 50px;
 }
 
@@ -21,67 +28,113 @@
     border: solid 3px black;
     width: 800px;
     height: 400px;
+} */
+
+.containerall {
+    border: #d44950 solid 3px;
+    height: 100%;
+    width: 800px;
+    margin-top: 100px;
+    background-color: white;
+}
+.imagem {
+    border: solid 3px red;
+    width: 80%;
+    height: 400px;
+    margin-top: 0px;
+    margin: auto;
+    display: flex;
+    margin-bottom: 30px;
+}
+.social .imagem span img {
+    height: 100%;
+    width: 100%;
+    position: relative;
 }
 
-.social .quiz2 button{
-    margin-top: 50px;
-    height: 30px;
-    width: 150px;
+.imagem .pergunta{
+    position: absolute;
+    color: black;
+    font-size: 25px;
+    font-weight: 900;
+}
+
+.social .container2 {
+    background-color: white;
+    border: solid 3px;
+    width: 100%;
+    padding: 20px;
+    height: 200px;
+}
+
+.titulos {
+    font-weight: 900;
+    font-size: 30px;
+    display: flex;
+}
+
+
+button {
+    margin-top: 20px;
+}
+
+.social .container2 label {
+    width: 50%;
+    float: left;
+    padding: 0 4px;
+    margin-bottom: 8px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.social .container2 label input[type=checkbox] {
+    position: absolute;
+    clip: rect(0, 0, 0, 0);
+}
+
+.social .container2 label span {
+    display: block;
+    background-color: #fff;
+    color: #1b4486;
+    padding: 8px;
+    font-size: 20px;
+    border: 2px solid #1b4486;
     
 }
-.social .quiz3 button{
-    margin-top: 50px;
-    height: 30px;
-    width: 150px;
-    display: none;
-    
+
+.social .container2 label:hover span {
+    background-color: #639dff;
+    color: #1b4486;
+    box-shadow: 1px 1px 5px rgba(255, 255, 255, .4) inset;
 }
-.social .quiz4 button{
-    margin-top: 50px;
-    height: 30px;
-    width: 150px;
-    display: none;
-    
+
+.social .container2 label:hover span {
+    background-color: #639dff;
+    color: #1b4486;
+    box-shadow: 1px 1px 5px rgba(255, 255, 255, .4) inset;
 }
-.social .quiz5 button{
-    margin-top: 50px;
-    height: 30px;
-    width: 150px;
-    display: none;
-    
+
+/* Quando item selecionado */
+.social .container2 label input[type=checkbox]:checked+span {
+    background-color: #1b4486;
+    border-color: #ffcc0f;
+    color: #fff;
 }
-.social .quiz6 button{
-    margin-top: 50px;
-    height: 30px;
-    width: 150px;
-    display: none;
-    
+.social .container2 label input:checked + span{
+    background-color:#911;
+    color:#fff;
 }
-.social .quiz7 button{
-    margin-top: 50px;
-    height: 30px;
-    width: 150px;
-    display: none;
-    
+
+/* Quando mouse passa por cima de item selecionado */
+label:hover input[type=checkbox]:checked+span {
+    background-color: #d44950;
+    border-color: #ffcc0f;
 }
-.social .quiz8 button{
-    margin-top: 50px;
-    height: 30px;
-    width: 150px;
-    display: none;
-    
-}
-.social .quiz9 button{
-    margin-top: 50px;
-    height: 30px;
-    width: 150px;
-    display: none;
-    
-}
-.social .quiz10 button{
-    margin-top: 50px;
-    height: 30px;
-    width: 150px;
-    display: none;
-    
-}
+
+
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }

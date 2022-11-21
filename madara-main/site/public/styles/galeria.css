@@ -7,11 +7,92 @@ body{
 }
 
 
+  ::-webkit-scrollbar {
+      width: 10px;
+      height: 10px;
+    }
+    
+    ::-webkit-scrollbar-track-piece {
+      background-color: #ffffff;
+    }
+    
+    ::-webkit-scrollbar-thumb:vertical {
+      height: 5px;
+      background-color: #666;
+    }
+  
+  #aqui{
+    color: red;
+    text-decoration: none;
+  }
+  
+  li #aqui{
+    color: red;
+  }
+  
+  .header {
+    /* border: solid 3px red; */
+      height: 80px;
+      /* background-color:  rgb(45, 26, 49); */
+      width: 100%;
+      margin: auto;
+      display: flex;
+  
+  }
+  .header .container{
+    /* border: solid 3px blue; */
+      margin-right: 10%;
+      margin-left: 10%;
+      height: 100%;
+      width: 80%;
+      display: flex;
+      list-style-type: none;
+      font-size: xx-large;
+      font-weight: 900;
+      align-items: center;
+      color: rgb(152, 0, 0);
+  
+  }
+  
+  .header .container .navbar{
+    /* border: solid 3px brown; */
+      margin-left: 50%;
+      width: 50%;
+      height: 100%;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      font-size: large;
+      list-style-type: none;    
+      color: white;
+  
+  }
+  
+  .header .container .navbar li a{
+      text-decoration: none;
+      color: white;
+      transition: color 1s;
+      transition: font-size 0.2s;
+  
+  
+  }
+  .header .container .navbar li a:hover{
+    color: red;
+    font-size: 25px;
+  
+  }
+  
+  
+  html{
+    overflow-x: hidden;
+  
+  }
+
 
 .social .container ul {
-    border: solid 3px green;
+    /* border: solid 3px green; */
     width: 100%;
-    height: 900px;
+    height: 600px;
     list-style: none;
     margin: auto;
     display: flex;
@@ -29,19 +110,24 @@ body{
     visibility: visible;
     width: 100%;
     height: 100%;
-    top: 0;
-    left: 0;
+    top: 100px;
+    left: 100px;
     background-color: rgba(10, 10, 10, .7);
     position: fixed;
     display: block;
 }
 
 .social  .foto {
+    /* border: solid 3px green; */
     width: 200px;
     height: 150px;
     padding: 5px;
+    transition: transform 0.7s ease;
 
 
+}
+.social .foto:hover{
+    transform:  scale(1.2);
 }
 
 .social .container .box .galeria {

@@ -1,18 +1,5 @@
 body {
-    margin: 0;
-}
-
-#aqui{
-  color: red;
-}
-
-.header {
-    height: 80px;
-    background-color:  rgb(45, 26, 49);
-    width: 100%;
-    margin: auto;
-    display: flex;
-
+  margin: 0;
 }
 ::-webkit-scrollbar {
     width: 10px;
@@ -27,8 +14,32 @@ body {
     height: 5px;
     background-color: #666;
   }
-.header .container{
+
+#aqui{
+  color: red;
+  text-decoration: none;
+}
+
+li #aqui{
+  color: red;
+}
+
+.header {
+  /* border: solid 3px red; */
+    height: 80px;
+    /* background-color:  rgb(45, 26, 49); */
+    width: 100%;
     margin: auto;
+    display: flex;
+    position: absolute;
+    top:0;
+    left:0;
+
+}
+.header .container{
+  /* border: solid 3px blue; */
+    margin-right: 10%;
+    margin-left: 10%;
     height: 100%;
     width: 80%;
     display: flex;
@@ -37,9 +48,12 @@ body {
     font-weight: 900;
     align-items: center;
     color: rgb(152, 0, 0);
+    position: absolute;
+
 }
 
 .header .container .navbar{
+  /* border: solid 3px brown; */
     margin-left: 50%;
     width: 50%;
     height: 100%;
@@ -49,17 +63,28 @@ body {
     font-size: large;
     list-style-type: none;    
     color: white;
+    position: absolute;
 
 }
 
 .header .container .navbar li a{
     text-decoration: none;
     color: white;
+    transition: color 1s;
+    transition: font-size 0.2s;
+
+
+}
+.header .container .navbar li a:hover{
+  color: red;
+  font-size: 25px;
 
 }
 
+
 html{
   overflow-x: hidden;
+
 }
 
 

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,22 +11,36 @@
     <link rel="stylesheet" href="styles/footer.css">
     <title>Document</title>
 </head>
+
 <body>
-    <div class="header">
-        <div class="container">
-            <li>Uchiha Madara</li>
-            <div class="navbar">
+    <div class="banner">
+        <video autoplay loop muted>
+            <source
+                src="assets/Uchiha Madara Live Anime Wallpaper - Animated by me for wallpaper engine - NARUTO Madara wallpaper.mp4"
+                type="video/mp4">
+        </video>
+        <div class="header">
+            <div class="container">
+                <li>Uchiha Madara</li>
+                <div class="navbar">
                     <li><a href="index.html">inicio</a></li>
-                    <li><a href="galeria.html">Galeria</li>
-                    <li><a href="Login-Madara.html">Login</li>
-                    <li class="aqui">Cadastrar</a></li>
+                    <li><a href="galeria.html">Galeria</a></li>
                     <li><a href="Quiz-madara.html">Quiz</a></li>
-                
+                    <li>|</li>
+                    <li><a href="Login-Madara.html">Login</a></li>
+                    <li id="aqui">Cadastrar</li>
+
+                </div>
             </div>
         </div>
-    </div>
-    <div class="banner">
-        <div class="container">
+
+
+        <div class="container2">
+            <div class="alerta_erro">
+                <div class="card_erro" id="cardErro">
+                    <span id="mensagem_erro"></span>
+                </div>
+            </div>
             <h2>Login</h2>
             <input class="ipt" type="text" name="" id="ipt_nome" placeholder="Coloque seu Nome">
             <h2>Email</h2>
@@ -52,8 +67,9 @@
             Siga minhas redes sociais:
         </div>
     </div>
-    
+
 </body>
+
 </html>
 <script>
     function cadastrar() {
@@ -72,7 +88,11 @@
             finalizarAguardar();
             return false;
         }
-        else {
+        else if(confirmacaoSenha!=senha) {
+            alert("As senhas precisam ser iguais!")
+        }
+        else{
+            
             setInterval(sumirMensagem, 5000)
         }
 
@@ -101,7 +121,7 @@
                 setTimeout(() => {
                     window.location = "Login-Madara.html";
                 }, "2000")
-                
+
                 limparFormulario();
                 finalizarAguardar();
             } else {
