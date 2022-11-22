@@ -3,15 +3,30 @@ body {
 }
 
 .social {
-    border: #1b4486 solid 3px;
+    /* border: #1b4486 solid 3px; */
     display: flex;
-    background-image: url(../assets/1119223.jpg);
     background-position: center;
     background-size: cover;
     height: 100%;
     width: 100%;
     justify-content: center;
 }
+
+.social video {
+    z-index: -1;
+    position: absolute;
+    background-attachment: fixed;
+    width: 100vw;
+  height: 100vh;
+    object-fit: cover;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+   
+}
+
 
 /* .social .container {
     display: flex;

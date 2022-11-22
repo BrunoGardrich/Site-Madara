@@ -3,6 +3,8 @@
     background-color:  rgb(45, 26, 49);
     width: 100%;
     bottom: 0;
+    top: 0;
+    display: flex;
 }
 .footer .container {
     margin: auto;

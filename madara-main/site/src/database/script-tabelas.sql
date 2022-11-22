@@ -6,21 +6,31 @@
 comandos para mysql - banco local - ambiente de desenvolvimento
 */
 
-CREATE DATABASE aquatech;
-
-USE aquatech;
+use Madara;
+select * from usuario;
 
 CREATE TABLE usuario (
-	id INT PRIMARY KEY AUTO_INCREMENT,
+	idUsuario INT PRIMARY KEY AUTO_INCREMENT,
 	nome VARCHAR(50),
 	email VARCHAR(50),
 	senha VARCHAR(50)
 );
 
-CREATE TABLE quiz (
-	idquiz INT PRIMARY KEY AUTO_INCREMENT,
-	pontuacao int,
-	fk_usuario INT,
-	FOREIGN KEY (fk_usuario) REFERENCES usuario(idusuario)
-);
+select * from usuario;
+select * from quiz;
 
+Create table acesso (
+idAcesso int primary key auto_increment,
+dtAcesso Datetime default current_timestamp
+);
+drop table acesso;
+drop table usuario;
+drop table quiz;
+
+create table quiz (
+idquiz int primary key auto_increment,
+pontuacao int,
+fkusuario int,
+foreign key (fkusuario)references usuario(idUsuario)
+);
+select * from quiz;

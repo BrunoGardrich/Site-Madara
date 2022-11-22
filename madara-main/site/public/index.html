@@ -23,7 +23,7 @@
         </video>
         <div class="header">
             <div class="container">
-                <li>Uchiha Madara</li>
+                <li id="logo">Uchiha Madara</li>
                 <div class="navbar">
                     <li id="aqui">inicio</li>
                     <li><a href="galeria.html">Galeria</a></li>
@@ -147,7 +147,9 @@
                 <img src="assets/deserto-madara.jpg">
             </div>
             <div class="historia2">
-                ADOLETA
+                Madara então testa seu novo corpo, lutando contra tropas imensas de Ninjas e contra os 5 Hokages, e após Ganhar sem
+                dificuldades, ele vai até Obito, onde está acontecendo outra guerra junto com as 9 bijuus. Madara então invoca Gedo
+                Mazo para tentar colocar as 9 bijuus dentro dele e invocar a 10 caudas para ser seu Jinchuriki
             </div>
         </div>
 
@@ -258,37 +260,39 @@
 
 
     </div>
+    <div class="allsocial2">
+        <div class="social2" data-animar="right">
+            <div class="container" data-animado="left">
+                Veja Como foi as principais Lutas de Madara
 
-    <div class="social2" data-animar="right">
-        <div class="container">
+
+            </div>
         </div>
-    </div>
 
-    <div class="social3" data-animar="top">
-        <div class="container">
-            Teste seus conhecimentos sobre o Madara !
-            O quao fã voce é do personagem ?
+        <div class="social3" data-animar="top">
+            <div class="container">
+                Teste seus conhecimentos sobre o Madara !
+                O quao fã voce é do personagem ?
 
-            <span id="aqui2"><a href="Quiz-madara.html">Quiz</a></span>
+                <span id="aqui2"><a href="Quiz-madara.html">Quiz</a></span>
+            </div>
         </div>
-    </div>
-    <div class="social4" data-animar="right">
-        <div class="container">
-            Teste seus conhecimentos sobre o Madara !
-            O quao fã voce é do personagem ?
+        <div class="social4" data-animar="right">
+            <div class="container">
+                Teste seus conhecimentos sobre o Madara !
+                O quao fã voce é do personagem ?
 
-            <span id="aqui2"><a href="Quiz-madara.html">Quiz</a></span>
+                <span id="aqui2"><a href="galeria.html">Quiz</a></span>
+            </div>
         </div>
-    </div>
-    <div class="social5">
-        <div class="container">
-            Teste seus conhecimentos sobre o Madara !
-            O quao fã voce é do personagem ?
-            <img src="assets/konoha1.jpg" alt="">
+        <div class="social5">
+            <div class="container">
+        
+                <img src="assets/konoha1.jpg" alt="">
 
-            <span id="aqui2"><a href="Quiz-madara.html">Quiz</a></span>
+                <span id="aqui2"><a href="galeria.html">Quiz</a></span>
+            </div>
         </div>
-    </div>
     </div>
 
 
@@ -305,7 +309,7 @@
 <script>
     const debounce = function (func, wait, immediate) {
         let timeout;
-        return function(...args){
+        return function (...args) {
             const context = this;
             const later = function () {
                 timeout = null;
@@ -337,9 +341,32 @@
 
     animeScroll();
 
-    if(selecionar.length){
-    window.addEventListener('scroll', debounce(function () {
-        animeScroll();
-    },100));
-}
+    if (selecionar.length) {
+        window.addEventListener('scroll', debounce(function () {
+            animeScroll();
+        }, 100));
+    }
+    const selecionar2 = document.querySelectorAll('[data-animado]')
+    const animationClass2 = 'animate';
+
+    function animeScroll2() {
+        const windowTop = window.pageYOffset + (window.innerHeight * 0.75);
+        selecionar2.forEach(function (element) {
+            if ((windowTop) > element.offsetTop) {
+                element.classList.add(animationClass2)
+            } else {
+                element.classList.remove(animationClass2)
+
+            }
+
+        })
+    }
+
+    animeScroll2();
+
+    if (selecionar2.length) {
+        window.addEventListener('scroll', debounce(function () {
+            animeScroll();
+        }, 400));
+    }
 </script>
