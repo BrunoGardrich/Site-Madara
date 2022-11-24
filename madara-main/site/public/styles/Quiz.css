@@ -130,21 +130,26 @@ button {
 }
 
 /* Quando item selecionado */
-.social .container2 label input[type=checkbox]:checked+span {
-    background-color: #1b4486;
-    border-color: #ffcc0f;
+/* .social .container2 label input[type=checkbox]:checked+span {
+    background-color: red;
+    border-color: red;
+    color: #fff;
+} */
+.social .container2 label input[class="correto"]:checked+span{
+    background-color: green;
+    border-color: green;
     color: #fff;
 }
 .social .container2 label input:checked + span{
     background-color:#911;
     color:#fff;
-}
+} */
 
-/* Quando mouse passa por cima de item selecionado */
-label:hover input[type=checkbox]:checked+span {
+Quando mouse passa por cima de item selecionado
+ label:hover input[type=checkbox]:checked+span {
     background-color: #d44950;
     border-color: #ffcc0f;
-}
+} 
 
 
 

@@ -7,25 +7,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/Header-Footer.css">
     <link rel="stylesheet" href="styles/Quiz.css">
-    <title>Document</title>
+    <link rel="icon" href="./assets/madara.jpg">
+    <title>Quiz</title>
 </head>
 
 <body>
-    
+
     <div class="social">
-    <div class="header">
-        <div class="container">
-            <li>Uchiha Madara</li>
-            <div class="navbar">
-                <li><a href="index.html">inicio</a></li>
-                <li><a href="galeria.html">Galeria</a></li>
-                <li id="aqui">Quiz</a></li>
-                <li>|</li>
-                <li><a href="Login-Madara.html">Login</a></li>
-                <li><a href="Cadastrar-Madara.html">Cadastrar</a></li>
+        <div class="header">
+            <div class="container">
+                <li>Uchiha Madara</li>
+                <div class="navbar">
+                    <li><a href="index.html">inicio</a></li>
+                    <li><a href="galeria.html">Galeria</a></li>
+                    <li id="aqui">Quiz</a></li>
+                    <li>|</li>
+                    <li><a href="Login-Madara.html">Login</a></li>
+                    <li><a href="Cadastrar-Madara.html">Cadastrar</a></li>
+                </div>
             </div>
         </div>
-    </div>
 
 
 
@@ -34,7 +35,7 @@
         </video>
         <div class="containerall">
             <span id="nivel">aa</span>
-            
+
             <div class="imagem">
                 <span>
                     <img src="assets/10caudas-madara.jpeg" alt="">
@@ -52,8 +53,9 @@
                 <label>
                     <input type="checkbox" onclick="next(1)" name="question1"><span>20~30</span><br>
                 </label>
-                <label>
-                    <input type="checkbox" onclick="next(1)" name="question1" id="correct1"><span>90~100</span><br>
+                <label class="um">
+                    <input type="checkbox" onclick="next(1)" name="question1" class="correto"
+                        id="correct1"><span>90~100</span><br>
                 </label>
                 <label><input type="checkbox" onclick="next(1)" name="question1"><span>40~50</span><br>
                 </label>
@@ -73,7 +75,8 @@
             <div class="container2">
                 <span class="titulos">Questão 2</span>
                 <label>
-                    <input type="checkbox" onclick="next(2)" name="question2" id="correct2"><span>Gunbai</span><br>
+                    <input type="checkbox" onclick="next(2)" name="question2" class="correto"
+                        id="correct2"><span>Gunbai</span><br>
                 </label>
                 <label>
                     <input type="checkbox" onclick="next(2)" name="question2"><span>kama</span><br>
@@ -100,7 +103,8 @@
                 <label><input type="checkbox" onclick="next(3)" name="question3"><span>Amigo</span><br></label>
                 <label> <input type="checkbox" onclick="next(3)" name="question3"><span>Criação</span><br></label>
                 <label><input type="checkbox" onclick="next(3)" name="question3"><span>É da familía</span><br></label>
-                <label><input type="checkbox" onclick="next(3)" name="question3" id="correct3"><span>Nenhuma dessas
+                <label><input type="checkbox" onclick="next(3)" name="question3" class="correto"
+                        id="correct3"><span>Nenhuma dessas
                         opções</span><br></label>
             </div>
 
@@ -116,9 +120,9 @@
             <div class="container2">
                 <span class="titulos">Questão 4</span>
 
-                <label><input type="checkbox" onclick="next(4)" name="question4"><span>Falcoaria</span><br></label>
-                <label> <input type="checkbox" onclick="next(4)" name="question4"
-                        id="correct4"><span>Treinar</span><br></label>
+                <label><input type="checkbox" onclick="next(4)" name="question4" class="correto"
+                        id="correct4"><span>Falcoaria</span><br></label>
+                <label> <input type="checkbox" onclick="next(4)" name="question4"><span>Treinar</span><br></label>
                 <label><input type="checkbox" onclick="next(4)" name="question4"><span>Matar
                         figurante</span><br></label>
                 <label><input type="checkbox" onclick="next(4)" name="question4"><span>Arremesso de
@@ -140,7 +144,7 @@
                 <label> <input type="checkbox" onclick="next(5)" name="question5"><span>Hagoromo
                     </span><br></label>
                 <label><input type="checkbox" onclick="next(5)" name="question5"><span>Hashirama</span><br></label>
-                <label><input type="checkbox" onclick="next(5)" name="question5"
+                <label><input type="checkbox" onclick="next(5)" name="question5" class="correto"
                         id="correct5"><span>Nenhum</span><br></label>
             </div>
             <div class="imagem">
@@ -156,7 +160,8 @@
                 <span class="titulos">Questão 6</span>
 
                 <label><input type="checkbox" onclick="next(6)" name="question6"><span>Kaguya</span><br></label>
-                <label> <input type="checkbox" onclick="next(6)" name="question6" id="correct6"><span>Perder a
+                <label> <input type="checkbox" onclick="next(6)" name="question6" class="correto" class="correto"
+                        id="correct6"><span>Perder a
                         juubi</span><br></label>
                 <label><input type="checkbox" onclick="next(6)" name="question6"><span>Zetsu Negro</span><br></label>
                 <label><input type="checkbox" onclick="next(6)" name="question6"><span>Hashirama</span><br></label>
@@ -174,7 +179,7 @@
                 <span class="titulos">Questão 7</span>
 
                 <label><input type="checkbox" onclick="next(7)" name="question7"><span>300</span><br></label>
-                <label> <input type="checkbox" onclick="next(7)" name="question7"
+                <label> <input type="checkbox" onclick="next(7)" name="question7" class="correto"
                         id="correct7"><span>330</span><br></label>
                 <label><input type="checkbox" onclick="next(7)" name="question7"><span>700</span><br></label>
                 <label><input type="checkbox" onclick="next(7)" name="question7"><span>300</span><br></label>
@@ -192,7 +197,7 @@
                 <span class="titulos">Questão 8</span>
 
                 <label><input type="checkbox" onclick="next(8)" name="question8"><span>300</span><br></label>
-                <label> <input type="checkbox" onclick="next(8)" name="question8"
+                <label> <input type="checkbox" onclick="next(8)" name="question8" class="correto"
                         id="correct8"><span>330</span><br></label>
                 <label><input type="checkbox" onclick="next(8)" name="question8"><span>700</span><br></label>
                 <label><input type="checkbox" onclick="next(8)" name="question8"><span>300</span><br></label>
@@ -210,7 +215,7 @@
                 <span class="titulos">Questão 9</span>
 
                 <label><input type="checkbox" onclick="next(9)" name="question9"><span>300</span><br></label>
-                <label> <input type="checkbox" onclick="next(9)" name="question9"
+                <label> <input type="checkbox" onclick="next(9)" name="question9" class="correto"
                         id="correct9"><span>330</span><br></label>
                 <label><input type="checkbox" onclick="next(9)" name="question9"><span>700</span><br></label>
                 <label><input type="checkbox" onclick="next(9)" name="question9"><span>300</span><br></label>
@@ -229,7 +234,7 @@
                 <label> <input type="checkbox" onclick="result(10)" name="question10"><span>300</span><br></label>
                 <label><input type="checkbox" onclick="result(10)" name="question10"><span>800</span><br></label>
                 <label> <input type="checkbox" onclick="result(10)" name="question10"><span>300</span><br></label>
-                <label> <input type="checkbox" onclick="result(10)" name="question10"
+                <label> <input type="checkbox" onclick="result(10)" name="question10" class="correto"
                         id="correct10"><span>300</span><br></label>
             </div>
 
@@ -262,7 +267,7 @@
 
 <script>
     var pontos = [];
-    var questao = []
+    var questao = [1,2,3,4,5,6,7,8,9,10]
     var pontuacao = 0
     document.getElementsByClassName('container2')[0].style.display = "block";
     document.getElementsByClassName('container2')[1].style.display = "none";
@@ -287,21 +292,23 @@
     document.getElementsByClassName('imagem')[9].style.display = "none";
     document.getElementsByClassName('imagem')[10].style.display = "none";
 
-
+    var correto = correct1.value
     function next(id) {
-        document.getElementsByClassName('container2')[id - 1].style.display = "none";
-        document.getElementsByClassName('container2')[id].style.display = "block";
-        document.getElementsByClassName('imagem')[id - 1].style.display = "none";
-        document.getElementsByClassName('imagem')[id].style.display = "block";
-        
-        nivel.innerHTML=` `
+        setTimeout(() => {
+            next();
 
-        for(var index=0; index<questao.length;index++){
-            nivel.innerHTML+=`${index}`
+            document.getElementsByClassName('container2')[id - 1].style.display = "none";
+            document.getElementsByClassName('container2')[id].style.display = "block";
+            document.getElementsByClassName('imagem')[id - 1].style.display = "none";
+            document.getElementsByClassName('imagem')[id].style.display = "block";
+        }, 1000);
 
+
+        nivel.innerHTML = ` `
+
+        for (var index = 0; index < questao.length; index++) {
         }
 
-        questao.push(1);
         for (let index = 1; index < pontos.length; index++) {
         }
 
