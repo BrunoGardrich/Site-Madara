@@ -84,15 +84,30 @@
         var email = ipt_email.value;
         var senha = ipt_senha1.value;
         var confirmacaoSenha = ipt_senha2.value;
+        var ax_erro = false
 
         if (nome == "" || email == "" || senha == "" || confirmacaoSenha == "") {
-            cardErro.style.display = "block"
-            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+            //cardErro.style.display = "block"
+            if (nome == "") {
+                // mensagem_erro= ("") 
+                alert(`Preencha o campo Nome!`)
+            }
+            if (email == "") {
+                alert(`Preencha o campo email!`)
+            }
+            if (senha == "") {
+                // mensagem_erro= ("") 
+                alert(`Preencha o campo Senha!`)
+            }
+            if (confirmacaoSenha == "") {
+                alert(`Preencha o campo Confirmação de senha!`)
+            }
 
             finalizarAguardar();
             return false;
-        }
-        else if (confirmacaoSenha != senha) {
+        } else if (email.indexOf('@') == -1) {
+            alert("Insira um email com @")
+        } else if (confirmacaoSenha != senha) {
             alert("As senhas precisam ser iguais!")
         }
         else {
@@ -130,6 +145,7 @@
                 finalizarAguardar();
             } else {
                 throw ("Houve um erro ao tentar realizar o cadastro!");
+
             }
         }).catch(function (resposta) {
             console.log(`#ERRO: ${resposta}`);
@@ -141,5 +157,6 @@
 
     function sumirMensagem() {
         cardErro.style.display = "none"
+
     }
 </script>

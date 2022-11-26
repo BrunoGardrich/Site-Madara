@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Implementando o chartJS</title>
+    <link rel="stylesheet" href="styles/grafico.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+    href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://kit.fontawesome.com/9f7414eb10.js" crossorigin="anonymous"></script>
+
+
+</head>
+<body style="display: flex;">
+
+
+    <div class="hello">
+        <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
+    </div>
+
+    <div class="dash">
+        <div class="btns-dash">
+            <!-- O gráfico é chamado de acordo com o id (fk_aquario) do banco  -->
+            <button class="btn-chart btn-pink" onclick="obterDadosGrafico(1)">Aquario 1</button>
+        </div>
+        <div>
+            <h3 class="tituloGraficos">
+                <span id="tituloAquario">pontuação do quiz</span>
+            </h3>
+        </div>
+        <div class="graph">
+            <canvas id="myChart"></canvas>
+        </div>
+        <div class="avisoCaptura">
+            <p id="avisoCaptura" style="color: black"></p>
+        </div>
+    </div>
+
+
+<div>
+    <canvas id="myChart" style="position: relative; height:40vh; width:40vw"></canvas>
+  </div>
+    
+</body>
+</html>
+<script>
+    b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+    var pontos = []
+    var ids=[]
+
+
+    window.onload = obterDadosGrafico(1);
+
+    // O gráfico é construído com três funções:
+    // 1. obterDadosGrafico -> Traz dados do Banco de Dados para montar o gráfico da primeira vez
+    // 2. plotarGrafico -> Monta o gráfico com os dados trazidos e exibe em tela
+    // 3. atualizarGrafico -> Atualiza o gráfico, trazendo novamente dados do Banco
+
+    // Esta função *obterDadosGrafico* busca os últimos dados inseridos em tabela de medidas.
+    // para, quando carregar o gráfico da primeira vez, já trazer com vários dados.
+    // A função *obterDadosGrafico* também invoca a função *plotarGrafico*
+
+    //     Se quiser alterar a busca, ajuste as regras de negócio em src/controllers
+    //     Para ajustar o "select", ajuste o comando sql em src/models
+    function obterDadosGrafico(idUsuario) {
+       
+
+        fetch(`/medidas/ultimas/${idUsuario}`, { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    resposta.reverse();
+
+                    plotarGrafico(resposta, idUsuario);
+
+                    sessionStorage.Qtd_usuarios= json.qtd
+                    console.log( sessionStorage.Qtd_usuarios)
+
+
+                    alertar(resposta[0].pontuacao, idUsuario);
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+    }
+
+    // Esta função *plotarGrafico* usa os dados capturados na função anterior para criar o gráfico
+    // Configura o gráfico (cores, tipo, etc), materializa-o na página e, 
+    // A função *plotarGrafico* também invoca a função *atualizarGrafico*
+    function plotarGrafico(resposta, idUsuario) {
+        console.log('iniciando plotagem do gráfico...');
+    
+    let labels = [
+ 
+    ];
+
+    let dados = {
+      labels: labels,
+      datasets: [{
+        label: 'pontuacao',
+        backgroundColor: 'rgb(0,206,209)',
+        borderColor: 'rgb(199,21,133)',
+        data: [],
+        fill: false,
+        tension: 0.1,
+
+      },]
+    };
+
+    Chart.defaults.color = '#000';
+
+
+    console.log('----------------------------------------------')
+    console.log('Estes dados foram recebidos pela funcao "obterDadosGrafico" e passados para "plotarGrafico":')
+    console.log(resposta)
+      
+    for (i = 0; i < resposta.length; i++) {
+        var registro = resposta[i];
+        labels.push(registro.fkusuario);
+        dados.datasets[0].data.push(registro.pontuacao);
+    }
+    
+    console.log('----------------------------------------------')
+    console.log('O gráfico será plotado com os respectivos valores:')
+    console.log('Labels:')
+    console.log(labels)
+    console.log('Dados:')
+    console.log(dados.datasets)
+    console.log('----------------------------------------------')
+
+    const config = {
+    type: 'bar',
+    data: dados,
+    options: {}
+    };
+    let myChart = new Chart(
+        document.getElementById('myChart'),
+        config
+        );
+    }
+        
+</script>
+
