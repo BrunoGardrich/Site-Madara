@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <script src="./js/funcoes.js"></script>
-    <link rel="stylesheet" href="styles/Header-Footer.css">
+    <link rel="stylesheet" href="styles/Header.css">
     <link rel="stylesheet" href="styles/login-banner.css">
     <link rel="stylesheet" href="styles/footer.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -25,10 +25,9 @@
             <div class="container">
                 <li>Uchiha Madara</li>
                 <div class="navbar">
-                    <li><a href="index.html">inicio</a></li>
+                    <li><a href="index.html">Inicio</a></li>
                     <li><a href="Batalhas.html">Batalhas</a></li>
                     <li><a href="galeria.html">Galeria</a></li>
-                    <li><a href="Quiz-madara.html">Quiz</a></li>
                     <li>|</li>
                     <li id="aqui">Login</li>
                     <li><a href="Cadastrar-Madara.html">Cadastrar</a></li>
@@ -41,6 +40,7 @@
             <input class="ipt" type="text" name="" id="ipt_email" placeholder="Coloque seu email">
             <h2>Senha</h2>
             <input class="ipt" type="password" name="" id="ipt_senha" placeholder="******">
+            <span id="cont">Ainda não tem uma conta ? <span id="cad"><a href="Cadastrar-Madara.html">Cadastre-se</a></span></span> 
 
             <button class="btn" onclick="entrar()">Entrar</button>
 
@@ -69,6 +69,7 @@
 
 
 <script>
+
     function entrar() {
         aguardar();
 
@@ -101,7 +102,7 @@
             },
             body: JSON.stringify({
                 emailServer: email,
-                senhaServer: senha
+                senhaServer: senha,
             })
         }).then(function (resposta) {
             console.log("ESTOU NO THEN DO entrar()!")
@@ -116,9 +117,10 @@
                     sessionStorage.EMAIL_USUARIO = json.email;
                     sessionStorage.NOME_USUARIO = json.nome;
                     sessionStorage.ID_USUARIO = json.idUsuario;
+                    sessionStorage.FOTO_USUARIO = json.linkFoto;
 
                     setTimeout(function () {
-                        window.location = "Quiz-madara.html";
+                        window.location = "../Logado/Perfil.html";
                     }, 1000); // apenas para exibir o loading
 
                 });

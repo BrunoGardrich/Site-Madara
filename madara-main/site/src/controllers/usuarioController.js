@@ -27,6 +27,7 @@ function listar(req, res) {
 function entrar(req, res) {
     var email = req.body.emailServer;
     var senha = req.body.senhaServer;
+    var linkFoto= req.body.linkFoto;
 
     if (email == undefined) {
         res.status(400).send("Seu email está undefined!");
@@ -34,7 +35,7 @@ function entrar(req, res) {
         res.status(400).send("Sua senha está indefinida!");
     } else {
         
-        usuarioModel.entrar(email, senha)
+        usuarioModel.entrar(email, senha, linkFoto)
             .then(
                 function (resultado) {
                     console.log(`\nResultados encontrados: ${resultado.length}`);
@@ -58,6 +59,68 @@ function entrar(req, res) {
             );
     }
 
+}
+function registrarfoto(req, res) {
+    // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
+    var linkFoto = req.body.linkFotoServer;
+    var fkusu = req.body.fkusuServer;
+
+    // Faça as validações dos valores
+    if (linkFoto == undefined) {
+        res.status(400).send("Seu pontos estão undefined!");
+    } else {
+        
+        // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
+        usuarioModel.registrarfoto(linkFoto, fkusu)
+            .then(
+                function (resultado) {
+                    res.json(resultado);
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log(
+                        "\nHouve um erro ao realizar o cadastro! Erro: ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+}
+function fotoPerfil(req, res) {
+    var fkusu = req.body.fkusuServer;
+    var linkFoto= req.body.linkFoto;
+
+    if (linkFoto == undefined) {
+        res.status(400).send("Sua Foto está undefined!");
+    } else if (fkusu == undefined) {
+        res.status(400).send("Sua fkusu está indefinida!");
+    } else {
+        
+        usuarioModel.fotoPerfil(linkFoto,fkusu)
+            .then(
+                function (resultado) {
+                    console.log(`\nResultados encontrados: ${resultado.length}`);
+                    console.log(`Resultados: ${JSON.stringify(resultado)}`); // transforma JSON em String
+
+                    if (resultado.length == 1) {
+                        console.log(resultado);
+                        res.json(resultado[0]);
+                    } else if (resultado.length == 0) {
+                        res.status(403).send("Foto inválida(s)");
+                    } else {
+                        res.status(403).send("foto repetida!");
+                    }
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log("\nHouve um erro ao realizar o login! Erro: ", erro.sqlMessage);
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
 }
 
 function cadastrar(req, res) {
@@ -128,6 +191,9 @@ module.exports = {
     cadastrar,
     listar,
     testar,
-    registrarponto
+    registrarponto,
+    registrarfoto,
+    fotoPerfil
+
 }
 

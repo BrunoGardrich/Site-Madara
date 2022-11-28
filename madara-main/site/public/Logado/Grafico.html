@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Implementando o chartJS</title>
+    <link rel="stylesheet" href="../styles/grafico.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="../styles/Header.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://kit.fontawesome.com/9f7414eb10.js" crossorigin="anonymous"></script>
+
+
+</head>
+
+<body>
+    <div class="banner">
+        <video autoplay loop muted>
+            <source src="assets/yt5s.io-Madara Uchiha 4K live wallpaper _)))-(1080p60).mp4" type="video/mp4">
+        </video>
+        <div class="header">
+            <div class="container">
+                <li id="logo">Uchiha Madara</li>
+                <div class="navbar">
+                    <li><a href="index_logado.html">Inicio</a></li>
+                    <li><a href="Batalhas_logado.html">Batalhas</a></li>
+                    <li id="aqui">grafico</li>
+                    <li><a href="galeria_logado.html">Galeria</a></li>
+                    <li><a href="Quiz-madara.html">Quiz</a></li>
+                    <li>|</li>
+                    <li>Olá, <span id="logado_usuario"></span></a></li>
+                    <li><select id="perfil">
+                        <option value=""></option>
+                        <option value=""><a href="Perfil.html">Perfil</a></option>
+                        <option value="">Sair
+                        </option>
+                    </select></li>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="social">
+        <div class="hello">
+            <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
+        </div>
+
+        <div class="dashboard">
+            <div class="btns-dash">
+                <!-- O gráfico é chamado de acordo com o id (fk_aquario) do banco  -->
+                <button class="grafico btn-pink" onclick="obterDadosGrafico(1)">Pontos-Quiz</button>
+            </div>
+            <div>
+                <h3 class="tituloGraficos">
+                    <span id="tituloAquario">pontuação do quiz</span>
+                </h3>
+            </div>
+            <div class="graph">
+                <canvas id="myChart"></canvas>
+            </div>
+            <div class="avisoCaptura">
+                <p id="avisoCaptura" style="color: black"></p>
+            </div>
+        </div>
+    </div>
+
+
+
+
+</body>
+
+</html>
+<script>
+    b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+    var pontos = []
+    var ids = []
+
+
+    window.onload = obterDadosGrafico(1);
+
+    // O gráfico é construído com três funções:
+    // 1. obterDadosGrafico -> Traz dados do Banco de Dados para montar o gráfico da primeira vez
+    // 2. plotarGrafico -> Monta o gráfico com os dados trazidos e exibe em tela
+    // 3. atualizarGrafico -> Atualiza o gráfico, trazendo novamente dados do Banco
+
+    // Esta função *obterDadosGrafico* busca os últimos dados inseridos em tabela de medidas.
+    // para, quando carregar o gráfico da primeira vez, já trazer com vários dados.
+    // A função *obterDadosGrafico* também invoca a função *plotarGrafico*
+
+    //     Se quiser alterar a busca, ajuste as regras de negócio em src/controllers
+    //     Para ajustar o "select", ajuste o comando sql em src/models
+    function obterDadosGrafico(idUsuario) {
+
+
+        fetch(`/medidas/ultimas/${idUsuario}`, { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    resposta.reverse();
+
+                    plotarGrafico(resposta, idUsuario);
+
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+    }
+
+    // Esta função *plotarGrafico* usa os dados capturados na função anterior para criar o gráfico
+    // Configura o gráfico (cores, tipo, etc), materializa-o na página e, 
+    // A função *plotarGrafico* também invoca a função *atualizarGrafico*
+    function plotarGrafico(resposta, idUsuario) {
+        console.log('iniciando plotagem do gráfico...');
+
+        let labels = [
+
+        ];
+
+        let dados = {
+            labels: labels,
+            datasets: [{
+                label: 'Pontos',
+                backgroundColor: 'rgb(0,206,209)',
+                borderColor: 'rgb(199,21,133)',
+                data: [],
+                fill: false,
+                tension: 0.1,
+
+            },]
+        };
+
+        Chart.defaults.color = '#ffff';
+
+
+        console.log('----------------------------------------------')
+        console.log('Estes dados foram recebidos pela funcao "obterDadosGrafico" e passados para "plotarGrafico":')
+        console.log(resposta)
+
+        for (i = 0; i < resposta.length; i++) {
+            var registro = resposta[i];
+            labels.push(registro.nome);
+            dados.datasets[0].data.push(registro.pontuacao);
+        }
+
+        console.log('----------------------------------------------')
+        console.log('O gráfico será plotado com os respectivos valores:')
+        console.log('Labels:')
+        console.log(labels)
+        console.log('Dados:')
+        console.log(dados.datasets)
+        console.log('----------------------------------------------')
+
+        const config = {
+            type: 'bar',
+            data: dados,
+            options: {}
+        };
+        let myChart = new Chart(
+            document.getElementById('myChart'),
+            config
+        );
+    }
+
+</script>

@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/galeria.css">
-    <link rel="stylesheet" href="styles/Header.css">
-    <link rel="icon" href="./assets/madara.jpg">
+    <link rel="stylesheet" href="../styles/galeria.css">
+    <link rel="stylesheet" href="../styles/Header.css">
+    <link rel="icon" href="../assets/madara.jpg">
 
     <title>Galeria</title>
 </head>
@@ -17,20 +17,17 @@
         <div class="container">
             <li>Uchiha Madara</li>
             <div class="navbar">
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="Batalhas.html">Batalhas</a></li>
-                <li id="logado" style="display: none;"><a href="Grafico.html">grafico</a></li>
+                <li><a href="index_logado.html">inicio</a></li>
+                <li><a href="Batalhas_logado.html">Batalhas</a></li>
+                <li><a href="Grafico.html">grafico</a></li>
                 <li id="aqui">Galeria</li>
-                <li id="logado" style="display: none;"><a href="Quiz-madara.html">Quiz</a></li>
+                <li><a href="Quiz-madara.html">Quiz</a></li>
                 <li>|</li>    
-                <li id="deslogado" style="display: block;"><a href="Login-Madara.html">Login</a></li>
-                <li id="deslogado" style="display: block;"><a href="Cadastrar-Madara.html">Cadastrar</a></li>
-                <li id="logado" style="display: none;">Olá, <span id="logado_usuario"></span></a></li>
-                <li id="logado" style="display: none;">
-                    <select  name="perfil1" id="perfil" onclick="sair()" onchange="location.href=this.value">
+                <li>Olá, <span id="logado_usuario"></span></a></li>
+                <li><select id="perfil">
                     <option value=""></option>
-                    <option value="Perfil.html">Perfil</option>
-                    <option value="2">Sair
+                    <option value=""><a href="Perfil.html">Perfil</a></option>
+                    <option value="">Sair
                     </option>
                 </select></li>
             </div>
@@ -40,21 +37,21 @@
     <div class="social">
         <div class="container">
             <ul>
-                <li><a href="#img1"> <img src="Assets/hashirama vs madara.jpg" class="foto"></a></li>
-                <li><a href="#img2"> <img src="Assets/zetsu perfura madara.png" class="foto"></a></li>
-                <li><a href="#img3"> <img src="Assets/sasuke,naruto e madara.png" class="foto"></a></li>
-                <li><a href="#img4"> <img src="Assets/deserto-madara.jpg" class="foto"></a></li>
-                <li><a href="#img5"> <img src="Assets/obito e madara.jpg" class="foto"></a></li>
-                <li><a href="#img6"> <img src="Assets/vale.jpg" class="foto"></a></li>
-                <li><a href="#img7"> <img src="Assets/1134662.jpg" class="foto"></a></li>
-                <li><a href="#img8"> <img src="Assets/simbolo-uchiha.jpg" class="foto"></a></li>
-                <li><a href="#img9"> <img src="Assets/morte.jpg" class="foto"></a></li>
-                <li><a href="#img10"> <img src="Assets/Uchiha-Madara-Naruto-Anime-naruto-shippuden-1382122.jpeg" class="foto"></a></li>
-                <li><a href="#img11"> <img src="Assets/fases.jpg" class="foto"></a></li>
-                <li><a href="#img12"> <img src="Assets/guy-vs-madara.jpg" class="foto"></a></li>
-                <li><a href="#img13"> <img src="Assets/hashirama-esfaquea-madara.png" class="foto"></a></li>
-                <li><a href="#img14"> <img src="Assets/rinnegan.jpeg" class="foto"></a></li>
-                <li><a href="#img15"> <img src="Assets/10caudas-madara.jpeg" class="foto"></a></li>
+                <li><a href="#img1"> <img src="../Assets/hashirama vs madara.jpg" class="foto"></a></li>
+                <li><a href="#img2"> <img src="../Assets/zetsu perfura madara.png" class="foto"></a></li>
+                <li><a href="#img3"> <img src="../Assets/sasuke,naruto e madara.png" class="foto"></a></li>
+                <li><a href="#img4"> <img src="../Assets/deserto-madara.jpg" class="foto"></a></li>
+                <li><a href="#img5"> <img src="../Assets/obito e madara.jpg" class="foto"></a></li>
+                <li><a href="#img6"> <img src="../Assets/vale.jpg" class="foto"></a></li>
+                <li><a href="#img7"> <img src="../Assets/1134662.jpg" class="foto"></a></li>
+                <li><a href="#img8"> <img src="../Assets/simbolo-uchiha.jpg" class="foto"></a></li>
+                <li><a href="#img9"> <img src="../Assets/morte.jpg" class="foto"></a></li>
+                <li><a href="#img10"> <img src="../Assets/Uchiha-Madara-Naruto-Anime-naruto-shippuden-1382122.jpeg" class="foto"></a></li>
+                <li><a href="#img11"> <img src="../Assets/fases.jpg" class="foto"></a></li>
+                <li><a href="#img12"> <img src="../Assets/guy-vs-madara.jpg" class="foto"></a></li>
+                <li><a href="#img13"> <img src="../Assets/hashirama-esfaquea-madara.png" class="foto"></a></li>
+                <li><a href="#img14"> <img src="../Assets/rinnegan.jpeg" class="foto"></a></li>
+                <li><a href="#img15"> <img src="../Assets/10caudas-madara.jpeg" class="foto"></a></li>
             </ul>
         </div>
 
@@ -62,7 +59,7 @@
             <div class="galeria">
                 <a href="#img6" class="btn" id="prev">&#171;</a>
                 <a href="" class="btn" id="close">x</a>
-                <img id="ctimg"src="assets/hashirama vs madara.jpg" alt="">
+                <img id="ctimg"src="../assets/hashirama vs madara.jpg" alt="">
                 <a href="#img2" class="btn" id="next">&#187;</a>
             </div>
         </div>
@@ -70,7 +67,7 @@
             <div class="galeria">
                 <a href="#img1" class="btn" id="prev">&#171;</a>
                 <a href="" class="btn" id="close">x</a>
-                <img id="ctimg" src="Assets/zetsu perfura madara.png" alt="">
+                <img id="ctimg" src="../Assets/zetsu perfura madara.png" alt="">
                 <a href="#img3" class="btn" id="next">&#187;</a>
             </div>
         </div>
@@ -78,7 +75,7 @@
             <div class="galeria">
                 <a href="#img2" class="btn" id="prev">&#171;</a>
                 <a href="" class="btn" id="close">x</a>
-                <img id="ctimg" src="Assets/sasuke,naruto e madara.png" alt="">
+                <img id="ctimg" src="../Assets/sasuke,naruto e madara.png" alt="">
                 <a href="#img4" class="btn" id="next">&#187;</a>
             </div>
         </div>
@@ -86,7 +83,7 @@
             <div class="galeria">
                 <a href="#img3" class="btn" id="prev">&#171;</a>
                 <a href="" class="btn" id="close">x</a>
-                <img id="ctimg" src="Assets/deserto-madara.jpg" alt="">
+                <img id="ctimg" src="../Assets/deserto-madara.jpg" alt="">
                 <a href="#img5" class="btn" id="next">&#187;</a>
             </div>
         </div>
@@ -94,7 +91,7 @@
             <div class="galeria">
                 <a href="#img4" class="btn" id="prev">&#171;</a>
                 <a href="" class="btn" id="close">x</a>
-                <img id="ctimg" src="Assets/obito e madara.jpg" alt="">
+                <img id="ctimg" src="../Assets/obito e madara.jpg" alt="">
                 <a href="#img6" class="btn" id="next">&#187;</a>
             </div>
         </div>
@@ -102,7 +99,7 @@
             <div class="galeria">
                 <a href="#img5" class="btn" id="prev">&#171;</a>
                 <a href="" class="btn" id="close">x</a>
-                <img id="ctimg" src="Assets/vale.jpg" alt="">
+                <img id="ctimg" src="../Assets/vale.jpg" alt="">
                 <a href="#img7" class="btn" id="next">&#187;</a>
             </div>
         </div>
@@ -110,7 +107,7 @@
             <div class="galeria">
                 <a href="#img6" class="btn" id="prev">&#171;</a>
                 <a href="" class="btn" id="close">x</a>
-                <img id="ctimg" src="Assets/1134662.jpg" alt="">
+                <img id="ctimg" src="../Assets/1134662.jpg" alt="">
                 <a href="#img8" class="btn" id="next">&#187;</a>
             </div>
         </div>
@@ -118,7 +115,7 @@
             <div class="galeria">
                 <a href="#img7" class="btn" id="prev">&#171;</a>
                 <a href="" class="btn" id="close">x</a>
-                <img id="ctimg" src="Assets/simbolo-uchiha.jpg">
+                <img id="ctimg" src="../Assets/simbolo-uchiha.jpg" alt="">
                 <a href="#img9" class="btn" id="next">&#187;</a>
             </div>
         </div>
@@ -126,7 +123,7 @@
             <div class="galeria">
                 <a href="#img8" class="btn" id="prev">&#171;</a>
                 <a href="" class="btn" id="close">x</a>
-                <img id="ctimg" src="Assets/morte.jpg" alt="">
+                <img id="ctimg" src="../Assets/morte.jpg" alt="">
                 <a href="#img10" class="btn" id="next">&#187;</a>
             </div>
         </div>
@@ -134,7 +131,7 @@
             <div class="galeria">
                 <a href="#img9" class="btn" id="prev">&#171;</a>
                 <a href="" class="btn" id="close">x</a>
-                <img id="ctimg" src="Assets/madara foda.jpg" alt="">
+                <img id="ctimg" src="../Assets/madara foda.jpg" alt="">
                 <a href="#img11" class="btn" id="next">&#187;</a>
             </div>
         </div>
@@ -142,7 +139,7 @@
             <div class="galeria">
                 <a href="#img10" class="btn" id="prev">&#171;</a>
                 <a href="" class="btn" id="close">x</a>
-                <img src="Assets/fases.jpg" alt="">
+                <img src="../Assets/fases.jpg" alt="">
                 <a id="ctimg" href="#img12" class="btn" id="next">&#187;</a>
             </div>
         </div>
@@ -150,7 +147,7 @@
             <div class="galeria">
                 <a href="#img11" class="btn" id="prev">&#171;</a>
                 <a href="" class="btn" id="close">x</a>
-                <img src="Assets/guy-vs-madara.jpg" alt="">
+                <img src="../Assets/guy-vs-madara.jpg" alt="">
                 <a  id="ctimg" href="#img13" class="btn" id="next">&#187;</a>
             </div>
         </div>
@@ -158,7 +155,7 @@
             <div class="galeria">
                 <a href="#img12" class="btn" id="prev">&#171;</a>
                 <a href="" class="btn" id="close">x</a>
-                <img id="ctimg" src="Assets/hashirama-esfaquea-madara.png" alt="">
+                <img id="ctimg" src="../Assets/hashirama-perfura-madara.jpg" alt="">
                 <a href="#img14" class="btn" id="next">&#187;</a>
             </div>
         </div>
@@ -166,7 +163,7 @@
             <div class="galeria">
                 <a href="#img13" class="btn" id="prev">&#171;</a>
                 <a href="" class="btn" id="close">x</a>
-                <img src="Assets/rinnegan.jpeg" alt="">
+                <img src="../Assets/rinnegan.jpeg" alt="">
                 <a href="#img15" class="btn" id="next">&#187;</a>
             </div>
         </div>
@@ -174,7 +171,7 @@
             <div class="galeria">
                 <a href="#img14" class="btn" id="prev">&#171;</a>
                 <a href="" class="btn" id="close">x</a>
-                <img src="Assets/10caudas-madara.jpeg" alt="">
+                <img src="../Assets/10caudas-madara.jpeg" alt="">
                 <a href="#img1" class="btn" id="next">&#187;</a>
             </div>
         </div>
@@ -183,25 +180,7 @@
 </body>
 
 </html>
-
 <script>
-    if(sessionStorage.length == 0){
+    logado_usuario.innerHTML = sessionStorage.NOME_USUARIO;
 
-    }else{
-        logado[0].style.display ='block';
-        logado[1].style.display ='block';
-        logado[2].style.display ='block';
-        logado[3].style.display ='block';
-        deslogado[0].style.display ='none';
-        deslogado[1].style.display ='none';
-        logado_usuario.innerHTML = sessionStorage.NOME_USUARIO;
-        var fotousuario = sessionStorage.FOTO_USUARIO;
-        document.getElementById('perfil').style.backgroundImage = `url("../Assets/${fotousuario}")`;
-
-    }
-
-    function sair(){
-        sessionStorage.clear()
-    }
 </script>
-

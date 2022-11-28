@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/Header-Footer.css">
+    <link rel="stylesheet" href="styles/Header.css">
     <title>Document</title>
 </head>
 <body>
@@ -16,13 +16,21 @@
             <div class="container">
                 <li id="logo">Uchiha Madara</li>
                 <div class="navbar">
-                    <li id="aqui">Inicio</li>
-                    <li><a href="Batalhas.html">Batalhas</a></li>
+                    <li><a href="index.html">Inicio</li>
+                    <li id="aqui">Batalhas</li>
+                    <li id="logado" style="display: none;"><a href="Grafico.html">grafico</a></li>
                     <li><a href="galeria.html">Galeria</a></li>
-                    <li><a href="Quiz-madara.html">Quiz</a></li>
+                    <li id="logado" style="display: none;"><a href="Quiz-madara.html">Quiz</a></li>
                     <li>|</li>
-                    <li><a href="Login-Madara.html">Login</a></li>
-                    <li><a href="Cadastrar-Madara.html">Cadastrar</a></li>
+                    <li id="deslogado" style="display: block;"><a href="Login-Madara.html">Login</a></li>
+                    <li id="deslogado" style="display: block;"><a href="Cadastrar-Madara.html">Cadastrar</a></li>   
+                    <li id="logado" style="display: none;">Olá, <span id="logado_usuario"></span></a></li>
+                    <li id="logado" style="display: none;"><select  name="perfil1" id="perfil" onclick="sair()" onchange="location.href=this.value">
+                        <option value=""></option>
+                        <option value="Perfil.html">Perfil</option>
+                        <option value="2">Sair
+                        </option>
+                    </select></li>
                 </div>
             </div>
         </div>
@@ -30,3 +38,19 @@
     
 </body>
 </html>
+<script>
+    if(sessionStorage.length == 0){
+
+    }else{
+        logado[0].style.display ='block';
+        logado[1].style.display ='block';
+        logado[2].style.display ='block';
+        logado[3].style.display ='block';
+        deslogado[0].style.display ='none';
+        deslogado[1].style.display ='none';
+        logado_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+        var fotousuario = sessionStorage.FOTO_USUARIO;
+        document.getElementById('perfil').style.backgroundImage = `url("../Assets/${fotousuario}")`;
+
+    }
+</script>

@@ -21,7 +21,7 @@ body {
 
 .banner .container2 {
   border: black solid 3px;
-  height: 200px;
+  height: 230px;
   width: 300px;
   justify-content: center;
   margin: auto;
@@ -66,6 +66,13 @@ body {
 
 }
 
+.banner .container2 #cont{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
 .banner img {
   position: absolute;
   height: 700px;
@@ -100,3 +107,4 @@ body {
 button {
   cursor: pointer;
 }
+

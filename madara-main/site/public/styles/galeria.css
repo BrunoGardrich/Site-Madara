@@ -12,7 +12,9 @@ body{
 
 }
 
-
+#logado_usuario{
+  color: black;
+}
   ::-webkit-scrollbar {
       width: 10px;
       height: 10px;
@@ -27,75 +29,13 @@ body{
       background-color: #666;
     }
   
-  #aqui{
-    color: red;
-    text-decoration: none;
-  }
-  
-  li #aqui{
-    color: red;
-  }
-  
-  .header {
-    /* border: solid 3px red; */
-    /* background-color:  rgb(45, 26, 49); */
-      height: 80px;
-      width: 100%;
-      margin: auto;
-      display: flex;
-      position:  absolute;
-  
-  }
-  .header .container{
-    /* border: solid 3px blue; */
-
-      height: 100%;
-      width: 80%;
-      display: flex;
-      list-style-type: none;
-      font-size: 40px;
-      font-weight: 900;
-      align-items: center;
-      color: rgb(152, 0, 0);
-      position: absolute;
-      font-family: fantasy;
-
-  }
-  
-  .header .container .navbar{
-    /* border: solid 3px brown; */
-      margin-left: 50%;
-      width: 50%;
-      height: 100%;
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      font-size: large;
-      list-style-type: none;    
-      color: white;
-      position: absolute;
-    font-family: cursive;
-  }
-  
-  .header .container .navbar li a{
-      text-decoration: none;
-      color: white;
-      transition: color 1s;
-      transition: font-size 0.2s;
-  
-  
-  }
-  .header .container .navbar li a:hover{
-    color: red;
-    font-size: 25px;
-  
-  }
-  
+ 
   
   html{
     overflow-x: hidden;
   
   }
+
   .social{
     height: 100vh;  
     width: 100vh;
@@ -128,6 +68,8 @@ body{
     background-color: rgba(10, 10, 10, .7);
     position: fixed;
     display: block;
+    z-index: 11;
+
 }
 
 .social  .foto {
@@ -137,7 +79,6 @@ body{
     padding: 19px;
     transition: transform 0.7s ease;
 
-
 }
 .social .foto:hover{
     transform:  scale(1.2);
@@ -146,7 +87,6 @@ body{
 .social .container .box .galeria {
     width: 1000px;
     margin: 150px auto;
-
 }
 
 .btn {
@@ -160,8 +100,10 @@ body{
     text-align: center;
 
 }
+
 .galeria img{
   opacity: 0;
+
 }
 
 .box:target .galeria img {
@@ -174,10 +116,12 @@ body{
     margin-top: 130px;
  
 }
+
 #ctimg{
   height: 500px;
   width: 700px;
 }
+
 #prev {
     left: 5%;
     top: 45%;

@@ -1,8 +1,7 @@
 var database = require("../database/config");
 
-function buscarUltimasMedidas(idUsuario, limite_linhas) {
+function buscarUltimasMedidas(idUsuario, limite_linhas, fkusu) {
 
-    instrucaoSql = 'select * from quiz join usuario on idUsuario = fkusuario'
 
     if (process.env.AMBIENTE_PROCESSO == "producao") {
         instrucaoSql = `select top ${limite_linhas}
@@ -14,11 +13,15 @@ function buscarUltimasMedidas(idUsuario, limite_linhas) {
                     where fk_aquario = ${idAquario}
                     order by id desc`;
     } else if (process.env.AMBIENTE_PROCESSO == "desenvolvimento") {
-        instrucaoSql = `select 
-                    *
-                    from quiz join usuario on idUsuario = fkusuario
-                   
-                    order by idusuario desc limit ${limite_linhas}`;
+        instrucaoSql = `select * from usuario 
+        join quiz on 
+        fkusuario = idusuario
+        order by idUsuario desc limit ${limite_linhas}`;
+
+        instrucaoSql = `select * from usuario 
+        left join perfil on 
+        fkusu = idUsuario `;
+
     } else {
         console.log("\nO AMBIENTE (produção OU desenvolvimento) NÃO FOI DEFINIDO EM app.js\n");
         return

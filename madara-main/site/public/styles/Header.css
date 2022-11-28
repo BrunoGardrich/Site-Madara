@@ -32,10 +32,14 @@ li #aqui{
     width: 100%;
     margin: auto;
     display: flex;
-    position: absolute;
+    position: relative;
     top:0;
     left:0;
-
+    backdrop-filter: opacity(0,5);
+    position: fixed;
+    z-index: 1;
+    background: rgb(45, 26, 49) transparent;
+    background: rgba(45, 26, 49, 0.7);
 }
 .header .container{
   /* border: solid 3px blue; */
@@ -52,6 +56,8 @@ li #aqui{
     position: absolute;
     font-family: fantasy;
 
+
+
 }
 /* .header .container #logo{
   filter: drop-shadow(0 0 20px rgb(152, 0, 0)) drop-shadow(0 0 50px rgb(152, 0, 0));
@@ -60,8 +66,8 @@ li #aqui{
 
 .header .container .navbar{
   /* border: solid 3px brown; */
-    margin-left: 50%;
-    width: 50%;
+    margin-left: 30%;
+    width: 70%;
     height: 100%;
     display: flex;
     justify-content: space-around;
@@ -74,9 +80,32 @@ li #aqui{
 
 }
 
+.header .container .navbar #deslogado{
+display: block;
+}
+
+.header .container .navbar li #perfil{
+  background: url('../assets/do-utilizador.png'); 
+  background-size: 100% 100%;
+  width: 48px;
+		height: 48px;
+    border: none;
+    border-radius: 50%;
+}
+.header .container .navbar li #perfil:checked{
+
+    border: none;
+}
+
+.header .container .navbar li #perfil option{
+  background: rgb(45, 26, 49);
+  color: white; 
+
+}
+
 .header .container .navbar li a{
     text-decoration: none;
-    color: white;
+    color: rgb(255, 255, 255);
     transition: color 1s;
     transition: font-size 0.2s;
 
@@ -85,7 +114,12 @@ li #aqui{
 .header .container .navbar li a:hover{
   color: red;
   font-size: 25px;
+  opacity: 1;
 
+}
+#logado_usuario{
+  color: red;
+  
 }
 
 

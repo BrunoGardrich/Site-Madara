@@ -101,4 +101,12 @@ body {
     font-weight: 500;
     font-size: 20px;
   }
+
+  #cont {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  
+  }
   

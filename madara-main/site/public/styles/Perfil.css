@@ -1,12 +1,95 @@
 body{
-    background-color: #212124;
+    background-color: rgb(255, 191, 0);
+}
+
+.social{
+    width: 100vw;
+    height: 100vh;
+}
+
+.container{
+    border: solid 3px blue;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+.container ul{
+    border: solid 3px yellow;
+
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+.container .foto {
+    border: solid 3px green;
+    width: 200px;
+    height: 150px;
+    padding: 19px;
+    transition: transform 0.7s ease;
+
+
+}
+.container .foto:hover{
+    transform:  scale(1.2);
+}
+
+#tituloPerfil{
+    font-weight: 900;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+}
+.banner2{
+    display: flex;
+    justify-content: center;
+    border: solid 3px pink;
+    height: 400px;
+}
+
+.dialogo{
+    border: solid red 3px;
+    display: flex;
+    justify-content: center;
+
+    font-size: 30px;
+}
+.usuario{
+    border: solid red 3px;
+    font-size: 25px;
+    font-weight: 900;
+}
+
+.foto_usuario{
+    border: solid red 3px;
+    display: flex;
+    justify-content: center;
+    width: 300px;
+    margin-left: 39%;
+}
+
+
+.banner2 li {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+
+}
+.banner2 li a{
+    border: solid brown 3px;
+    text-decoration: none;
+
 }
 
 
 
-  
-  
-  .hello {
+
+
+
+
+ 
+.hello {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -83,3 +166,13 @@ body{
     margin: 5px;
     border-radius: 3px;
   }
+
+
+
+
+
+
+
+
+
+

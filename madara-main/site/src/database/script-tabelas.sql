@@ -19,10 +19,7 @@ CREATE TABLE usuario (
 select * from usuario;
 select * from quiz;
 
-Create table acesso (
-idAcesso int primary key auto_increment,
-dtAcesso Datetime default current_timestamp
-);
+
 drop table acesso;
 drop table usuario;
 drop table quiz;
@@ -34,3 +31,10 @@ fkusuario int,
 foreign key (fkusuario)references usuario(idUsuario)
 );
 select * from quiz;
+
+create table perfil (
+idperfil int primary key auto_increment,
+linkFoto varchar(200),
+fkusu int,
+foreign key (fkusu)references usuario(idUsuario)
+);

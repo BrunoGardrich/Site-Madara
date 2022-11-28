@@ -2,13 +2,15 @@ var medidaModel = require("../models/medidaModel");
 
 function buscarUltimasMedidas(req, res) {
 
-    const limite_linhas = 7;
+    const limite_linhas = 10;
+    const limite_linhas2 = 2;
 
     var idUsuario = req.params.idUsuario;
+    var fkusu = req.params.fkusu;
 
     console.log(`Recuperando as ultimas ${limite_linhas} medidas`);
 
-    medidaModel.buscarUltimasMedidas(idUsuario, limite_linhas).then(function (resultado) {
+    medidaModel.buscarUltimasMedidas(idUsuario, limite_linhas, fkusu, limite_linhas2).then(function (resultado) {
         if (resultado.length > 0) {
             res.status(200).json(resultado);
         } else {

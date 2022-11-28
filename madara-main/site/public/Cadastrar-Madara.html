@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="./js/funcoes.js"></script>
-    <link rel="stylesheet" href="styles/Header-Footer.css">
+    <link rel="stylesheet" href="styles/Header.css">
     <link rel="stylesheet" href="styles/cadastro-banner.css">
     <link rel="stylesheet" href="styles/footer.css">
     <link rel="icon" href="./assets/madara.jpg">
@@ -25,10 +25,9 @@
             <div class="container">
                 <li>Uchiha Madara</li>
                 <div class="navbar">
-                    <li><a href="index.html">inicio</a></li>
+                    <li><a href="index.html">Inicio</a></li>
                     <li><a href="Batalhas.html">Batalhas</a></li>
                     <li><a href="galeria.html">Galeria</a></li>
-                    <li><a href="Quiz-madara.html">Quiz</a></li>
                     <li>|</li>
                     <li><a href="Login-Madara.html">Login</a></li>
                     <li id="aqui">Cadastrar</li>
@@ -44,7 +43,7 @@
                     <span id="mensagem_erro"></span>
                 </div>
             </div>
-            <h2>Login</h2>
+            <h2>Nome</h2>
             <input class="ipt" type="text" name="" id="ipt_nome" placeholder="Coloque seu Nome">
             <h2>Email</h2>
             <input class="ipt" type="email" name="" id="ipt_email" placeholder="Coloque seu Email">
@@ -54,6 +53,7 @@
             <input class="ipt" type="password" name="" id="ipt_senha2" placeholder="*******">
 
             <button class="btn" onclick="cadastrar()">Cadastrar</button>
+            <span id="cont">Já tem uma conta ? <span id="cad"><a href="Login-Madara.html">Entrar</a></span></span> 
 
         </div>
         <div id="div_aguardar" class="loading-div">
@@ -85,30 +85,27 @@
         var senha = ipt_senha1.value;
         var confirmacaoSenha = ipt_senha2.value;
         var ax_erro = false
+        
 
         if (nome == "" || email == "" || senha == "" || confirmacaoSenha == "") {
             //cardErro.style.display = "block"
-            if (nome == "") {
+            alert("Por favor, preencha todos os campos!")
+            if(ipt_nome.length  > 10){
+                alert("Escreva um nome mais curto")
+            }
                 // mensagem_erro= ("") 
-                alert(`Preencha o campo Nome!`)
-            }
-            if (email == "") {
-                alert(`Preencha o campo email!`)
-            }
-            if (senha == "") {
-                // mensagem_erro= ("") 
-                alert(`Preencha o campo Senha!`)
-            }
-            if (confirmacaoSenha == "") {
-                alert(`Preencha o campo Confirmação de senha!`)
-            }
+             
 
             finalizarAguardar();
             return false;
-        } else if (email.indexOf('@') == -1) {
-            alert("Insira um email com @")
+        } else  if(ipt_nome.value.length  > 10){
+            alert("Escreva um nome mais curto!")
+        }else if (email.indexOf('@') == -1 || email.length <= 10) {
+            alert("Insira um email com @ ou mais longo!")
         } else if (confirmacaoSenha != senha) {
             alert("As senhas precisam ser iguais!")
+        }else if (ipt_senha1.value < 6) {
+            alert("Senha fraca, minimo de 6 digitos!")
         }
         else {
 

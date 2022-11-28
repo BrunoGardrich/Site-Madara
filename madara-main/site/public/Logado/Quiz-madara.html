@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/Header-Footer.css">
-    <link rel="stylesheet" href="styles/Quiz.css">
-    <link rel="icon" href="./assets/madara.jpg">
+    <link rel="stylesheet" href="../styles/Header.css">
+    <link rel="stylesheet" href="../styles/Quiz.css">
+    <link rel="icon" href="../assets/madara.jpg">
     <title>Quiz</title>
 </head>
 
@@ -18,13 +18,13 @@
             <div class="container">
                 <li>Uchiha Madara</li>
                 <div class="navbar">
-                    <li><a href="index.html">inicio</a></li>
-                    <li><a href="Batalhas.html">Batalhas</a></li>
-                    <li><a href="galeria.html">Galeria</a></li>
+                    <li><a href="index_logado.html">inicio</a></li>
+                    <li><a href="Batalhas_logado.html">Batalhas</a></li>
+                    <li><a href="galeria_logado.html">Galeria</a></li>
                     <li id="aqui">Quiz</a></li>
                     <li>|</li>
-                    <li><a href="Login-Madara.html">Login</a></li>
-                    <li><a href="Cadastrar-Madara.html">Cadastrar</a></li>
+                    <li>Olá, <span id="logado_usuario"></span></a></li>
+                    <li><a href="../Login-Madara.html">Sair</a></li>
                 </div>
             </div>
         </div>
@@ -32,14 +32,14 @@
 
 
         <video autoplay infinite muted>
-            <source id="background" src="assets/yt5s.io-Live Wallpaper Madara Uchiha-(1080p).mp4">
+            <source id="background" src="../assets/yt5s.io-Live Wallpaper Madara Uchiha-(1080p).mp4">
         </video>
         <div class="containerall">
             <span id="nivel">1</span>/10
 
             <div class="imagem">
                 <span>
-                    <img src="assets/10caudas-madara.jpeg" alt="">
+                    <img src="../assets/10caudas-madara.jpeg" alt="">
                 </span>
                 <div class="pergunta">
                     Com quantos anos Madara morreu pela primeira vez ?
@@ -65,7 +65,7 @@
 
             <div class="imagem">
                 <span>
-                    <img src="assets/gunbai.jpg " alt="Arma do madara">
+                    <img src="../assets/gunbai.jpg " alt="Arma do madara">
 
                 </span>
                 <div class="pergunta">
@@ -91,7 +91,7 @@
 
             <div class="imagem">
                 <span>
-                    <img src="assets/fases.jpg" alt="">
+                    <img src="../assets/fases.jpg" alt="">
                 </span>
                 <div class="pergunta">
                     O que zetsu negro é do madara ?
@@ -111,7 +111,7 @@
 
             <div class="imagem">
                 <span>
-                    <img src="assets/madara-folha.jpg" alt="Madara olhando o buraco da folha">
+                    <img src="../assets/madara-folha.jpg" alt="Madara olhando o buraco da folha">
                 </span>
                 <div class="pergunta">
                     Qual era o passatempo do Madara
@@ -131,10 +131,10 @@
             </div>
             <div class="imagem">
                 <span>
-                    <img src="assets/madara-japo.jpeg" alt="">
+                    <img src="../assets/madara-japo.jpeg" alt="">
                 </span>
                 <div class="pergunta">
-                    Qual desses personagens venceria o Madara em seu Auge ?
+                    Qual desses personagens venceria o auge do Madara?
                 </div>
             </div>
 
@@ -150,7 +150,7 @@
             </div>
             <div class="imagem">
                 <span>
-                    <img src="assets/kyuubis.jpg" alt="">
+                    <img src="../assets/kyuubis.jpg" alt="">
                 </span>
                 <div class="pergunta">
                     O que/Quem matou Madara no final de Naruto shippuden ?
@@ -169,7 +169,7 @@
             </div>
             <div class="imagem">
                 <span>
-                    <img src="assets/madara-estiloso.png" alt="">
+                    <img src="../assets/madara-estiloso.png" alt="">
                 </span>
                 <div class="pergunta">
                     Qual era a frase favorita do Madara ?
@@ -187,7 +187,7 @@
             </div>
             <div class="imagem">
                 <span>
-                    <img src="assets/guy-vs-madara.jpg" alt="">
+                    <img src="../assets/guy-vs-madara.jpg" alt="">
                 </span>
                 <div class="pergunta">
                     Qual era a comida favorito do Madara ?
@@ -205,7 +205,7 @@
             </div>
             <div class="imagem">
                 <span>
-                    <img src="assets/mugen.jpg" alt="">
+                    <img src="../assets/mugen.jpg" alt="">
                 </span>
                 <div class="pergunta">
                     De quem era o Rinnegan que o Madara usava ?
@@ -223,7 +223,7 @@
             </div>
 
             <div class="imagem"> <span>
-                    <img src="assets/madara-rebate-ataque.png" alt="">
+                    <img src="../assets/madara-rebate-ataque.png" alt="">
                 </span>
                 <div class="pergunta">
                     Por que o Susano do Madara tem 4 braços em vez de asas ?
@@ -240,7 +240,7 @@
             </div>
 
             <div class="imagem"> <span>
-                    <img src="assets/madara-rebate-ataque.png" alt="">
+                    <img src="../assets/madara-rebate-ataque.png" alt="">
                 </span>
                 <div class="pergunta">
                     Resultado:
@@ -352,6 +352,7 @@
         menssagem3.innerHTML += `Sua pontuação é de:<b>${pontuacao}</b>`
         registrarponto(pontuacao)
     }
+    logado_usuario.innerHTML = sessionStorage.NOME_USUARIO;
 
     function registrarponto(pontuacao) {
 
