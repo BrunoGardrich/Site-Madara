@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/Perfil.css">
     <script src="../js/funcoes.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 
     <title>Document</title>
@@ -21,7 +20,6 @@
         Sorteie sua foto de perfil, qual fase do madara voce seria<button onclick="analisar()">Sortear</button>
         <br>
         <br>
-        Sua foto sorteada foi : <span id="foto_sorteada"></span>
         <div class="container">
             <ul>
                 <li><a href="#img1"> <img src="../Assets/madara-kid.png" class="foto"></a></li>
@@ -35,53 +33,33 @@
                 <li><a href="#img9"> <img src="../Assets/só-madara.jpg" class="foto"></a></li>
             </ul>
         </div>
+
+        <div class="banner">
+            <div class="hello">
+                <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
+            </div>
+            <span id="frasetest">aaaaa</span>
+
+    </div>
     </div>
 
-    <div class="banner">
-        <div class="hello">
-            <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
-        </div>
+    <div class="social2" id="parte2" style="display: block;">
+        <h1>Perfil</h1>
+        <span id="suafoto"></span>
+        <li><a href="../index.html">Ir para pagina inicial</a></li>
+        <span id="frasetest"></span>
 
-        <div class="dashboard">
-            <div class="btns-dash">
-                <!-- O gráfico é chamado de acordo com o id (fk_aquario) do banco  -->
-                <button class="grafico btn-pink" onclick="obterDadosFoto(1)">Pontos-Quiz</button>
-            </div>
-            <div>
-                <h3 class="tituloGraficos">
-                    <span id="tituloAquario">pontuação do quiz</span>
-                </h3>
-            </div>
-            <div class="graph">
-                <canvas id="myChart"></canvas>
-            </div>
-            <div class="avisoCaptura">
-                <p id="avisoCaptura" style="color: black"></p>
-            </div>
-        </div>
     </div>
-    <div class="social2" id="parte2" style="display: none;">
-       
-    </div>
-
-
 
 </body>
 
 </html>
 <script>
-    window.onload = obterDadosFoto(1);
-
-    a_usuario.innerHTML = sessionStorage.NOME_USUARIO
-
-    if (sessionStorage.FOTO_USUARIO != 'NULL') {
-    } else {
-        parte1.style.display = 'none';
-        parte2.style.display = 'block';
-    }
 
 
-    var linkFoto = ''
+    fotoPerfil()
+    
+    var linkFoto = "a"
     function analisar() {
 
         var sorteio = (Math.random() * 9);
@@ -127,155 +105,127 @@
         console.log(linkFoto)
         console.log(sorteio)
 
-        foto_sorteada.innerHTML = `<img src="../Assets/${linkFoto}" alt="foto do sorteio" style="width: 300px;">`
+        //foto_sorteada.innerHTML = `<img src="../Assets/${linkFoto}" alt="foto do sorteio" style="width: 300px;">`
         registrarfoto(linkFoto)
 
         sessionStorage.FOTO_USUARIO = linkFoto
-        setTimeout(() => {
-            window.location = "../index.html";
-        }, "2000")
-    }
-
-        function registrarfoto(linkFoto) {
-
-            var fkusu = sessionStorage.ID_USUARIO;
-
-
-            // Enviando o valor da nova input
-            fetch("/usuarios/registrarfoto", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({
-                    // crie um atributo que recebe o valor recuperado aqui
-                    // Agora vá para o arquivo routes/usuario.js
-                    linkFotoServer: linkFoto,
-                    fkusuServer: fkusu
-                })
-
-            }).then(function (resposta) {
-
-                resposta.json().then(json => {
-                    console.log(json);
-                    console.log(JSON.stringify(json));
-                })
-
-
-                console.log("resposta: ", resposta);
-
-                if (resposta.ok) {
-                    cardErro.style.display = "block";
+      //  setTimeout(() => {
+        //    window.location = "../index.html";
+       // }, "2000")
     
-                    mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
-    
-                    setTimeout(() => {
-                     //   window.location = "Login-Madara.html";
-                    }, "2000")
-    
-                    limparFormulario();
-                    finalizarAguardar();
-                } else {
-                    throw ("Houve um erro ao tentar realizar o cadastro!");
-    
-                }
-            }).catch(function (resposta) {
-                console.log(`#ERRO: ${resposta}`);
-            });
 
-        }
+var id = sessionStorage.ID_USUARIO
 
-  
+    function registrarfoto(linkFoto) {
+
+        id = Number(sessionStorage.ID_USUARIO);
 
 
-        function obterDadosFoto(idUsuario) {
-
-
-            fetch(`/medidas/ultimas/${idUsuario}`, { cache: 'no-store' }).then(function (response) {
-                if (response.ok) {
-                    response.json().then(function (resposta) {
-                        console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
-                        resposta.reverse();
-    
-                        plotarFoto(resposta, idUsuario);
-    
-                    });
-                } else {
-                    console.error('Nenhum dado encontrado ou erro na API');
-                }
+        // Enviando o valor da nova input
+        fetch("/usuarios/registrarfoto", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                idServer: id,
+                linkFotoServer: linkFoto,
             })
-                .catch(function (error) {
-                    console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
-                });
-        }
 
-        function plotarFoto(resposta, idUsuario) {
-            console.log('iniciando plotagem do gráfico...');
-    
-            let labels = [
-    
-            ];
-    
-            let dados = {
-                labels: labels,
-                datasets: [{
-                    label: 'Pontos',
-                    backgroundColor: 'rgb(0,206,209)',
-                    borderColor: 'rgb(199,21,133)',
-                    data: [],
-                    fill: false,
-                    tension: 0.1,
-    
-                },]
-            };
-    
-            Chart.defaults.color = '#ffff';
-    
-    
-            console.log('----------------------------------------------')
-            console.log('Estes dados foram recebidos pela funcao "obterDadosGrafico" e passados para "plotarGrafico":')
-            console.log(resposta)
-            console.log(sessionStorage.NOME_USUARIO)
-    
-            for (i = 0; i < resposta.length; i++) {
-                var registro = resposta[i];
-                if(registro.nome == sessionStorage.NOME_USUARIO){
-                labels.push(registro.linkFoto);
-                dados.datasets[0].data.push(registro.idUsuario);
-                sessionStorage.FOTO_USUARIO = (registro.linkFoto)
+        }).then(function (resposta) {
+
+            resposta.json().then(json => {
+                console.log(json);
+                console.log(JSON.stringify(json));
+            })
+
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                cardErro.style.display = "block";
+
+                mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+
+                setTimeout(() => {
+                    //   window.location = "Login-Madara.html";
+                }, "2000")
+
+                limparFormulario();
+                finalizarAguardar();
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
 
             }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        });
+
+    }
+}
+b_usuario.innerHTML = sessionStorage.NOME_USUARIO
+
+suafoto.innerHTML= `<img src="../assets/${sessionStorage.FOTO_USUARIO}" alt="Foto-madara" style="width: 300px;">`
+
+if (foto_fixa != 'null' && foto_fixa != 'undefined') {
+    parte1.style.display = 'none';
+    parte2.style.display = 'block';
+} else {
+}
+
+
+    function fotoPerfil() {
+         id = sessionStorage.ID_USUARIO
+
+        linkFoto = sessionStorage
+        fetch("/usuarios/fotoPerfil", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            // crie um atributo que recebe o valor recuperado aqui
+            // Agora vá para o arquivo routes/usuario.js
+            idServer: id,
+          }),
+        })
+          .then(function (resposta) {
+            if (resposta.ok) {
+              console.log(resposta);
+    
+              resposta.json().then((json) => {
+                console.log(json);
+                console.log("Resposta" + JSON.stringify(json));
+    
+                setTimeout(function () {
+                  sessionStorage.FOTO_USUARIO = json.linkFoto;
+                  console.log(sessionStorage.FOTO_USUARIO);
+                  if (sessionStorage.FOTO_USUARIO == "undefined") {
+                    console.log("Ainda não tem frase");
+                  } else {
+
+
+                    frasetest.innerHTML = sessionStorage.FOTO_USUARIO;
+                    if (foto_fixa != 'null' && foto_fixa != 'undefined') {
+                        parte1.style.display = 'none';
+                        parte2.style.display = 'block';
+                    } else {
+                    }
+
+                  }
+                }, 10); // apenas para exibir o loading
+              });
+            } else {
+              console.log("Houve um erro ao tentar realizar o login!");
             }
+          })
+          .catch(function (erro) {
+            console.log(erro);
+          });
     
-            console.log('----------------------------------------------')
-            console.log('O gráfico será plotado com os respectivos valores:')
-            console.log('Labels:')
-            console.log(labels)
-            console.log('Dados:')
-            console.log(dados.datasets)
-            console.log('----------------------------------------------')
-    
-            const config = {
-                type: 'bar',
-                data: dados,
-                options: {}
-            };
-            let myChart = new Chart(
-                document.getElementById('myChart'),
-                config
-           );
-            
-            b_usuario.innerHTML= sessionStorage.FOTO_USUARIO
-
-
-            
-          //  setTimeout(() => {
-            //    window.location = "Login-Madara.html";
-            //}, "2000")
-
-         
-        }
-
-
+        return false;
+      }
 
 </script>

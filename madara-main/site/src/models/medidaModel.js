@@ -1,6 +1,6 @@
 var database = require("../database/config");
 
-function buscarUltimasMedidas(idUsuario, limite_linhas, fkusu) {
+function buscarUltimasMedidas(id, limite_linhas, fkusu) {
 
 
     if (process.env.AMBIENTE_PROCESSO == "producao") {
@@ -13,14 +13,7 @@ function buscarUltimasMedidas(idUsuario, limite_linhas, fkusu) {
                     where fk_aquario = ${idAquario}
                     order by id desc`;
     } else if (process.env.AMBIENTE_PROCESSO == "desenvolvimento") {
-        instrucaoSql = `select * from usuario 
-        join quiz on 
-        fkusuario = idusuario
-        order by idUsuario desc limit ${limite_linhas}`;
-
-        instrucaoSql = `select * from usuario 
-        left join perfil on 
-        fkusu = idUsuario `;
+        instrucaoSql = `select * from usuario join quiz on fkusuario = id order by id desc limit ${limite_linhas}`;
 
     } else {
         console.log("\nO AMBIENTE (produção OU desenvolvimento) NÃO FOI DEFINIDO EM app.js\n");
@@ -28,7 +21,8 @@ function buscarUltimasMedidas(idUsuario, limite_linhas, fkusu) {
     }
 
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
-    return database.executar(instrucaoSql);
+    return database.executar(instrucaoSql)
+  
 }
 
 function buscarMedidasEmTempoReal(idAquario) {

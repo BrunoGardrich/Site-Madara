@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Implementando o chartJS</title>
+    <title>Grafico Quiz</title>
     <link rel="stylesheet" href="../styles/grafico.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="../styles/Header.css">
@@ -29,15 +29,17 @@
                 <div class="navbar">
                     <li><a href="index_logado.html">Inicio</a></li>
                     <li><a href="Batalhas_logado.html">Batalhas</a></li>
-                    <li id="aqui">grafico</li>
-                    <li><a href="galeria_logado.html">Galeria</a></li>
-                    <li><a href="Quiz-madara.html">Quiz</a></li>
+                    <li id="logado" style="display: none;">grafico</li>
+                    <li ><a href="galeria_logado.html">Galeria</a></li>
+                    <li id="logado" style="display: none;"><a href="Quiz-madara.html">Quiz</a></li>
                     <li>|</li>
-                    <li>Olá, <span id="logado_usuario"></span></a></li>
-                    <li><select id="perfil">
+                    <li id="deslogado" style="display: block;"><a href="Login-Madara.html">Login</a></li>
+                    <li id="deslogado" style="display: block;"><a href="Cadastrar-Madara.html">Cadastrar</a></li>
+                    <li id="logado" style="display: none;">Olá, <span id="logado_usuario"></span></a></li>
+                    <li id="logado" style="display: none;"><select name="perfil1" id="perfil" onclick="sair()" onchange="location.href=this.value">
                         <option value=""></option>
-                        <option value=""><a href="Perfil.html">Perfil</a></option>
-                        <option value="">Sair
+                        <option value="Perfil.html">Perfil</option>
+                        <option value="../Login-Madara.html">Sair
                         </option>
                     </select></li>
                 </div>
@@ -81,6 +83,26 @@
     var pontos = []
     var ids = []
 
+    if(sessionStorage.length == 0){
+
+    }else{
+        logado[0].style.display ='block';
+        logado[1].style.display ='block';
+        logado[2].style.display ='block';
+        logado[3].style.display ='block';
+        deslogado[0].style.display ='none';
+        deslogado[1].style.display ='none';
+        logado_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+        var fotousuario = sessionStorage.FOTO_USUARIO;
+        document.getElementById('perfil').style.backgroundImage = `url("../Assets/${fotousuario}")`;
+
+    }
+    function sair(){
+        if(perfil.value == 'index.html'){
+        sessionStorage.clear()
+        }
+    }
+
 
     window.onload = obterDadosGrafico(1);
 
@@ -95,16 +117,16 @@
 
     //     Se quiser alterar a busca, ajuste as regras de negócio em src/controllers
     //     Para ajustar o "select", ajuste o comando sql em src/models
-    function obterDadosGrafico(idUsuario) {
+    function obterDadosGrafico(id) {
 
 
-        fetch(`/medidas/ultimas/${idUsuario}`, { cache: 'no-store' }).then(function (response) {
+        fetch(`/medidas/ultimas/${id}`, { cache: 'no-store' }).then(function (response) {
             if (response.ok) {
                 response.json().then(function (resposta) {
                     console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
                     resposta.reverse();
 
-                    plotarGrafico(resposta, idUsuario);
+                    plotarGrafico(resposta, id);
 
                 });
             } else {
@@ -119,7 +141,7 @@
     // Esta função *plotarGrafico* usa os dados capturados na função anterior para criar o gráfico
     // Configura o gráfico (cores, tipo, etc), materializa-o na página e, 
     // A função *plotarGrafico* também invoca a função *atualizarGrafico*
-    function plotarGrafico(resposta, idUsuario) {
+    function plotarGrafico(resposta, id) {
         console.log('iniciando plotagem do gráfico...');
 
         let labels = [

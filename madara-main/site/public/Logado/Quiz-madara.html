@@ -20,6 +20,7 @@
                 <div class="navbar">
                     <li><a href="index_logado.html">inicio</a></li>
                     <li><a href="Batalhas_logado.html">Batalhas</a></li>
+                    <li><a href="Grafico.html">grafico</a></li>
                     <li><a href="galeria_logado.html">Galeria</a></li>
                     <li id="aqui">Quiz</a></li>
                     <li>|</li>
@@ -356,7 +357,7 @@
 
     function registrarponto(pontuacao) {
 
-        var fkusuario = sessionStorage.ID_USUARIO;
+        var id = sessionStorage.ID_USUARIO;
 
 
         // Enviando o valor da nova input
@@ -369,7 +370,7 @@
                 // crie um atributo que recebe o valor recuperado aqui
                 // Agora vá para o arquivo routes/usuario.js
                 pontosServer: pontuacao,
-                fkusuarioServer: fkusuario
+                idServer: id
             })
         }).then(function (resposta) {
 

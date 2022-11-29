@@ -20,12 +20,12 @@ router.post("/cadastrar", function (req, res) {
 router.post("/autenticar", function (req, res) {
     usuarioController.entrar(req, res);
 });
-router.post("/fotoPerfil", function (req, res) {
-    usuarioController.fotoPerfil(req, res);
-});
 
 router.post("/opcaoSel", function (req, res) {
     usuarioController.entrar(req, res);
+});
+router.post("/fotoPerfil", function (req, res) {
+    usuarioController.fotoPerfil(req, res);
 });
 
 router.post("/registrarponto", function (req, res) {

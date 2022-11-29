@@ -29,8 +29,8 @@
                 <li id="logado" style="display: none;">
                     <select  name="perfil1" id="perfil" onclick="sair()" onchange="location.href=this.value">
                     <option value=""></option>
-                    <option value="Perfil.html">Perfil</option>
-                    <option value="2">Sair
+                    <option value="../Logado/Perfil.html">Perfil</option>
+                    <option value="galeria.html">Sair
                     </option>
                 </select></li>
             </div>
@@ -201,7 +201,9 @@
     }
 
     function sair(){
+        if(perfil.value == 'galeria.html'){
         sessionStorage.clear()
+        }
     }
 </script>
 

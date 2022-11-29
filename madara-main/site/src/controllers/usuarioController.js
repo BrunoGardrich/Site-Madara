@@ -63,7 +63,7 @@ function entrar(req, res) {
 function registrarfoto(req, res) {
     // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
     var linkFoto = req.body.linkFotoServer;
-    var fkusu = req.body.fkusuServer;
+    var id = req.body.idServer;
 
     // Faça as validações dos valores
     if (linkFoto == undefined) {
@@ -71,7 +71,7 @@ function registrarfoto(req, res) {
     } else {
         
         // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
-        usuarioModel.registrarfoto(linkFoto, fkusu)
+        usuarioModel.registrarfoto(linkFoto, id)
             .then(
                 function (resultado) {
                     res.json(resultado);
@@ -89,16 +89,9 @@ function registrarfoto(req, res) {
     }
 }
 function fotoPerfil(req, res) {
-    var fkusu = req.body.fkusuServer;
-    var linkFoto= req.body.linkFoto;
-
-    if (linkFoto == undefined) {
-        res.status(400).send("Sua Foto está undefined!");
-    } else if (fkusu == undefined) {
-        res.status(400).send("Sua fkusu está indefinida!");
-    } else {
+    var id = req.body.idServer;
         
-        usuarioModel.fotoPerfil(linkFoto,fkusu)
+        usuarioModel.fotoPerfil(id)
             .then(
                 function (resultado) {
                     console.log(`\nResultados encontrados: ${resultado.length}`);
@@ -121,7 +114,6 @@ function fotoPerfil(req, res) {
                 }
             );
     }
-}
 
 function cadastrar(req, res) {
     // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
@@ -159,7 +151,7 @@ function cadastrar(req, res) {
 function registrarponto(req, res) {
     // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
     var pontuacao = req.body.pontosServer;
-    var fkusuario = req.body.fkusuarioServer;
+    var id = req.body.idServer;
 
     // Faça as validações dos valores
     if (pontuacao == undefined) {
@@ -167,7 +159,7 @@ function registrarponto(req, res) {
     } else {
         
         // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
-        usuarioModel.registrarponto(pontuacao, fkusuario)
+        usuarioModel.registrarponto(pontuacao, id)
             .then(
                 function (resultado) {
                     res.json(resultado);

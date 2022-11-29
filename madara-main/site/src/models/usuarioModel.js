@@ -17,21 +17,21 @@ function entrar(email, senha) {
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
 }
-function fotoPerfil(linkFoto, fkusu) {
-    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function entrar(): ",)
+function fotoPerfil(id) {
+   
     var instrucao = `
-        SELECT * FROM perfil WHERE linkFoto = '${linkFoto}' AND fkusu = '${fkusu}';
+    SELECT * FROM perfil WHERE fkusu = ${id};
     `;
+
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
 }
-function registrarfoto(linkFoto, fkusu) {
-    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrar():");
-    
+
+function registrarfoto(linkFoto, id) {    
     // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
     //  e na ordem de inserção dos dados.
     var instrucao = `
-        INSERT INTO perfil (linkFoto, fkusu) VALUES ('${linkFoto}', '${fkusu}');
+        INSERT INTO perfil (fkusu, linkFoto) VALUES ('${id}', '${linkFoto}');
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
@@ -50,13 +50,13 @@ function cadastrar(nome, email, senha) {
     return database.executar(instrucao);
 }
 
-function registrarponto(pontuacao, fkusuario) {
+function registrarponto(pontuacao, id) {
     console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrar():");
     
     // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
     //  e na ordem de inserção dos dados.
     var instrucao = `
-        INSERT INTO quiz (pontuacao, fkusuario) VALUES ('${pontuacao}', '${fkusuario}');
+        INSERT INTO quiz (pontuacao, fkusuario) VALUES ('${pontuacao}', '${id}');
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
