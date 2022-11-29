@@ -20,12 +20,18 @@
                 <div class="navbar">
                     <li><a href="index_logado.html">inicio</a></li>
                     <li><a href="Batalhas_logado.html">Batalhas</a></li>
-                    <li><a href="Grafico.html">grafico</a></li>
+                    <li id="logado" style="display: none;"><a href="Grafico.html">grafico</a></li>
                     <li><a href="galeria_logado.html">Galeria</a></li>
                     <li id="aqui">Quiz</a></li>
                     <li>|</li>
-                    <li>Olá, <span id="logado_usuario"></span></a></li>
-                    <li><a href="../Login-Madara.html">Sair</a></li>
+                    <li id="logado" style="display: none;">Olá, <span id="logado_usuario"></span></a></li>
+                    <li id="logado" style="display: none;">
+                        <select  name="perfil1" id="perfil" onclick="sair()" onchange="location.href=this.value">
+                        <option value=""></option>
+                        <option value="../Logado/Perfil.html">Perfil</option>
+                        <option value="index.html">Sair
+                        </option>
+                    </select></li>
                 </div>
             </div>
         </div>
@@ -268,6 +274,24 @@
 </html>
 
 <script>
+
+    if(sessionStorage.length == 0){
+
+    }else{
+        logado[0].style.display ='block';
+        logado[1].style.display ='block';
+        logado[2].style.display ='block';
+        logado_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+        var fotousuario = sessionStorage.FOTO_USUARIO;
+        document.getElementById('perfil').style.backgroundImage = `url("../Assets/${fotousuario}")`;
+
+    }
+    function sair(){
+        if(perfil.value == 'index.html'){
+        sessionStorage.clear()
+        }
+    }
+
     var pontos = [];
     var questao = [1,2,3,4,5,6,7,8,9,10]
     var pontuacao = 0

@@ -17,15 +17,6 @@ function entrar(email, senha) {
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
 }
-function fotoPerfil(id) {
-   
-    var instrucao = `
-    SELECT * FROM perfil WHERE fkusu = ${id};
-    `;
-
-    console.log("Executando a instrução SQL: \n" + instrucao);
-    return database.executar(instrucao);
-}
 
 function registrarfoto(linkFoto, id) {    
     // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
@@ -33,6 +24,15 @@ function registrarfoto(linkFoto, id) {
     var instrucao = `
         INSERT INTO perfil (fkusu, linkFoto) VALUES ('${id}', '${linkFoto}');
     `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+function fotoPerfil(id) {
+   
+    var instrucao = `
+    SELECT * FROM perfil WHERE fkusu = ${id};
+    `;
+
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
 }

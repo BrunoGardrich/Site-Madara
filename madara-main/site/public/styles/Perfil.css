@@ -1,178 +1,219 @@
-body{
-    background-color: rgb(255, 191, 0);
-}
-
-.social{
-    width: 100vw;
-    height: 100vh;
-}
-
-.container{
-    border: solid 3px blue;
-    display: flex;
-    flex-wrap: wrap;
-
-}
-.container ul{
-    border: solid 3px yellow;
-
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
+body {
+  margin: 0;
 }
 
 
-.container .foto {
-    border: solid 3px green;
-    width: 200px;
-    height: 150px;
-    padding: 19px;
-    transition: transform 0.7s ease;
-
-
-}
-.container .foto:hover{
-    transform:  scale(1.2);
+.social {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(255, 191, 0);
 }
 
-#tituloPerfil{
-    font-weight: 900;
-    font-size: 30px;
-    display: flex;
-    justify-content: center;
-}
-.banner2{
-    display: flex;
-    justify-content: center;
-    border: solid 3px pink;
-    height: 400px;
+#tituloPerfil {
+  font-weight: 900;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  font-family: cursive;
 }
 
-.dialogo{
-    border: solid red 3px;
-    display: flex;
-    justify-content: center;
+.social .container {
+  border: solid 3px blue;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #666;
 
-    font-size: 30px;
-}
-.usuario{
-    border: solid red 3px;
-    font-size: 25px;
-    font-weight: 900;
 }
 
-.foto_usuario{
-    border: solid red 3px;
-    display: flex;
-    justify-content: center;
-    width: 300px;
-    margin-left: 39%;
+.social .container ul {
+  border: solid 3px yellow;
+
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 
-.banner2 li {
-    list-style-type: none;
-    display: flex;
-    justify-content: center;
+.social .container .foto {
+  border: solid 3px black;
+  width: 200px;
+  height: 150px;
+  padding: 19px;
+  transition: transform 0.7s ease;
+
 
 }
-.banner2 li a{
-    border: solid brown 3px;
-    text-decoration: none;
 
+.social .container .foto:hover {
+  transform: scale(1.2);
+}
+
+.social2 {
+
+  margin: 0;
 }
 
 
 
 
+.social2 .container2 {
+  background-color: white;
+  margin: 0;
+}
 
+.social2 h1 {
+  display: flex;
+  justify-content: center;
 
+}
 
- 
+.social2 .container2 .legenda {
+  display: flex;
+  border: purple 3px solid;
+  height: 100%;
+}
+
+#suafoto {
+  border: solid 10px black;
+  box-shadow: 10px 10px black;
+  display: flex;
+  width: 400px;
+  justify-content: center;
+  margin-left: 50px;
+}
+
 .hello {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-  }
-  
-  .hello h3 {
-    color: #e3b062;
-    font-weight: 300;
-    font-size: 1.2rem;
-  }
-  
-  .hello h3 span {
-    font-weight: 800;
-  }
-  
-  .dash-header {
-    background-color: #212124;
-  }
-  
-  .dashboard {
-    position: absolute;
-    display: flex;
-    background-color: #35354c;
-    height: 500px;
-    height: 70vh;
-    margin-right: 200px;
-    margin-left: 200px;
-    margin-top: 100px;
-    margin-bottom: 10px;
-  
-    width: 75%;
-      display: flex;
-      background-color: #161618;
-      flex-direction: column;
-      align-items: center;
-      justify-content: space-around;
-  }
-  
-  
-  .pontuacao{
-    margin: 5px;
-    margin-left: 20px;
-    width: 75%;
-  }
-  
-  
-  .btns-dash {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 30px;
-  }
-  
-  .graph {
-    width: 60%;
-    margin: auto;
-    padding-top: 10px;
-  }
-  
-  .tituloGraficos {
-    color: rgb(216, 216, 216);
-    display: flex;
-    justify-content: center;
-  }
-  
-  .grafico {
-    font-family: "Exo 2", sans-serif;
-    border: 0;
-    font-weight: 600;
-    font-size: 18px;
-    padding: 10px 15px;
-    color: #e6005a;
-    background-color: white;
-    margin: 5px;
-    border-radius: 3px;
-  }
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
 
 
 
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track-piece {
+  background-color: #ffffff;
+}
+
+::-webkit-scrollbar-thumb:vertical {
+  height: 5px;
+  background-color: #666;
+}
+
+#aqui {
+  color: red;
+  text-decoration: none;
+}
+
+li #aqui {
+  color: red;
+}
+
+.header {
+  /* border: solid 3px red; */
+  height: 80px;
+  background-color: rgb(45, 26, 49);
+  width: 100%;
+  margin: auto;
+  display: flex;
+  position: relative;
+  top: 0;
+  left: 0;
+  backdrop-filter: opacity(0, 5);
+  z-index: 1;
+}
+
+.header .container {
+  /* border: solid 3px blue; */
+  margin-right: 10%;
+  margin-left: 10%;
+  height: 100%;
+  width: 80%;
+  display: flex;
+  list-style-type: none;
+  font-size: xx-large;
+  font-weight: 900;
+  align-items: center;
+  color: rgb(152, 0, 0);
+  position: absolute;
+  font-family: fantasy;
 
 
 
+}
+
+/* .header .container #logo{
+  filter: drop-shadow(0 0 20px rgb(152, 0, 0)) drop-shadow(0 0 50px rgb(152, 0, 0));
+
+} */
+
+.header .container .navbar {
+  /* border: solid 3px brown; */
+  margin-left: 30%;
+  width: 70%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: large;
+  list-style-type: none;
+  color: white;
+  position: absolute;
+  font-family: cursive;
+
+}
+
+.header .container .navbar #deslogado {
+  display: block;
+}
+
+.header .container .navbar li #perfil {
+  background: url('../assets/do-utilizador.png');
+  background-size: 100% 100%;
+  width: 48px;
+  height: 48px;
+  border: none;
+  border-radius: 50%;
+}
+
+.header .container .navbar li #perfil:checked {
+
+  border: none;
+}
+
+.header .container .navbar li #perfil option {
+  background: rgb(45, 26, 49);
+  color: white;
+
+}
+
+.header .container .navbar li a {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  transition: color 1s;
+  transition: font-size 0.2s;
 
 
+}
+
+.header .container .navbar li a:hover {
+  color: red;
+  font-size: 25px;
+  opacity: 1;
+
+}
+
+#logado_usuario {
+  color: red;
+
+}
 
 
+html {
+  overflow-x: hidden;
+
+}
