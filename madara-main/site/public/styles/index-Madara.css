@@ -198,7 +198,7 @@ html {
     justify-content: center;
     align-items: center;
 }
-.social3 .container #aqui2 a{
+.social3 .container #aqui2{
     text-decoration: none;
     color: red;
     display: flex;
@@ -206,6 +206,7 @@ html {
     font-weight: 900;
     transition: font-size 0.5s;
     font-family: 'Courier New', Courier, monospace;
+    cursor: pointer;
 
 }
 .social3 .container #aqui2 a:hover{
