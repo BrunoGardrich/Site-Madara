@@ -50,20 +50,21 @@
         <span id="frasetest"></span>
 
     </div>
-
+    
 </body>
 
 </html>
 <script>
-
-
-    fotoPerfil()
+    foto_fixa = sessionStorage.FOTO_USUARIO
+    
+    
+    PegarPerfil()
     
     var linkFoto = "a"
     function analisar() {
-
+        
         var sorteio = (Math.random() * 9);
-
+        
         if (sorteio.toFixed(0) == 0) {
             linkFoto = 'madara-kid.png'
 
@@ -117,10 +118,10 @@
 var id = sessionStorage.ID_USUARIO
 
     function registrarfoto(linkFoto) {
-
+        
         id = Number(sessionStorage.ID_USUARIO);
 
-
+        
         // Enviando o valor da nova input
         fetch("/usuarios/registrarfoto", {
             method: "POST",
@@ -143,10 +144,10 @@ var id = sessionStorage.ID_USUARIO
 
 
             console.log("resposta: ", resposta);
-
+            
             if (resposta.ok) {
                 cardErro.style.display = "block";
-
+                
                 mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
 
                 setTimeout(() => {
@@ -167,52 +168,53 @@ var id = sessionStorage.ID_USUARIO
 }
 b_usuario.innerHTML = sessionStorage.NOME_USUARIO
 
-suafoto.innerHTML= `<img src="../assets/${sessionStorage.FOTO_USUARIO}" alt="Foto-madara" style="width: 300px;">`
-
-if (foto_fixa != 'null' && foto_fixa != 'undefined') {
-    parte1.style.display = 'none';
-    parte2.style.display = 'block';
-} else {
-}
 
 
-    function fotoPerfil() {
+
+    function PegarPerfil() {
          id = sessionStorage.ID_USUARIO
-
-        linkFoto = sessionStorage
-        fetch("/usuarios/fotoPerfil", {
+         
+         linkFoto = sessionStorage
+         fetch("/usuarios/fotoPerfil", {
           method: "POST",
           headers: {
-            "Content-Type": "application/json",
+              "Content-Type": "application/json",
           },
           body: JSON.stringify({
             // crie um atributo que recebe o valor recuperado aqui
             // Agora vá para o arquivo routes/usuario.js
             idServer: id,
-          }),
-        })
-          .then(function (resposta) {
-            if (resposta.ok) {
-              console.log(resposta);
-    
-              resposta.json().then((json) => {
+        }),
+    })
+    .then(function (resposta) {
+        if (resposta.ok) {
+            console.log(resposta);
+            
+            resposta.json().then((json) => {
                 console.log(json);
                 console.log("Resposta" + JSON.stringify(json));
-    
+                
+                if (foto_fixa != 'null' && foto_fixa != 'undefined') {
+                    parte1.style.display = 'none';
+                    parte2.style.display = 'block';
+                } else {
+                }
                 setTimeout(function () {
-                  sessionStorage.FOTO_USUARIO = json.linkFoto;
-                  console.log(sessionStorage.FOTO_USUARIO);
-                  if (sessionStorage.FOTO_USUARIO == "undefined") {
-                    console.log("Ainda não tem frase");
-                  } else {
-
-
+                    sessionStorage.FOTO_USUARIO = json.linkFoto;
+                    console.log(sessionStorage.FOTO_USUARIO);
                     frasetest.innerHTML = sessionStorage.FOTO_USUARIO;
-                    if (foto_fixa != 'null' && foto_fixa != 'undefined') {
+                    suafoto.innerHTML= `<img src="../assets/${sessionStorage.FOTO_USUARIO}" alt="Foto-madara" style="width: 300px;">`
+                 //   window.location = "Perfil.html";
+                    if (sessionStorage.FOTO_USUARIO != 'null' && sessionStorage.FOTO_USUARIO != 'undefined') {
                         parte1.style.display = 'none';
-                        parte2.style.display = 'block';
+                      parte2.style.display = 'block';
+                  } else {
+                  }
+                  if (sessionStorage.FOTO_USUARIO == "undefined") {
+                      console.log("Ainda não tem frase");
                     } else {
-                    }
+                        
+                        
 
                   }
                 }, 10); // apenas para exibir o loading
@@ -226,6 +228,6 @@ if (foto_fixa != 'null' && foto_fixa != 'undefined') {
           });
     
         return false;
-      }
-
+    }
+    
 </script>

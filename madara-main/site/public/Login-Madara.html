@@ -126,6 +126,7 @@
                 });
 
             } else {
+                alert("Email ou senha invalidos!")
 
                 console.log("Houve um erro ao tentar realizar o login!");
 
@@ -138,12 +139,12 @@
         }).catch(function (erro) {
             console.log(erro);
         })
-
+        
         return false;
     }
-
+    
     function sumirMensagem() {
-        cardErro.style.display = "none"
+        //cardErro.style.display = "none"
     }
 
 </script>
