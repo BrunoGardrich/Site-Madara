@@ -1,21 +1,38 @@
 body{
-    background-color: #212124;
+   /* background-color: #212124; */
+   margin: 0;
 }
 
+html{
+  background-color: #35354c;
+}
 
+.social {
+  /* border: solid 3px brown; */
+  height: 100vh;
+  margin-top: 100px;
+  background-image: url(../assets/madara.jpg);
+  background-position: fixed;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
 
+}
   
   
   .hello {
+    /* border: solid 3px green; */
     width: 100%;
     display: flex;
     justify-content: center;
+    margin-top: 10px;
   }
   
   .hello h3 {
-    color: #e3b062;
-    font-weight: 300;
+
+    color: white;
+    font-weight: 900;
     font-size: 1.2rem;
+    font-family: cursive;
   }
   
   .hello h3 span {
@@ -27,6 +44,7 @@ body{
   }
   
   .dashboard {
+    border: solid purple 10px;
     position: absolute;
     display: flex;
     background-color: #35354c;
@@ -34,9 +52,8 @@ body{
     height: 70vh;
     margin-right: 200px;
     margin-left: 200px;
-    margin-top: 100px;
+    margin-top: 20px;
     margin-bottom: 10px;
-  
     width: 75%;
       display: flex;
       background-color: #161618;
@@ -78,7 +95,7 @@ body{
     font-weight: 600;
     font-size: 18px;
     padding: 10px 15px;
-    color: #e6005a;
+    color: #e60000;
     background-color: white;
     margin: 5px;
     border-radius: 3px;

@@ -18,18 +18,17 @@
             <div class="container">
                 <li>Uchiha Madara</li>
                 <div class="navbar">
-                    <li><a href="index_logado.html">inicio</a></li>
-                    <li><a href="Batalhas_logado.html">Batalhas</a></li>
+                    <li><a href="../index.html">inicio</a></li>
                     <li id="logado" style="display: none;"><a href="Grafico.html">grafico</a></li>
-                    <li><a href="galeria_logado.html">Galeria</a></li>
+                    <li><a href="../galeria.html">Galeria</a></li>
                     <li id="aqui">Quiz</a></li>
                     <li>|</li>
                     <li id="logado" style="display: none;">Olá, <span id="logado_usuario"></span></a></li>
                     <li id="logado" style="display: none;">
                         <select  name="perfil1" id="perfil" onclick="sair()" onchange="location.href=this.value">
                         <option value=""></option>
-                        <option value="../Logado/Perfil.html">Perfil</option>
-                        <option value="index.html">Sair
+                        <option value="Perfil.html">Perfil</option>
+                        <option value="../index.html">Sair
                         </option>
                     </select></li>
                 </div>
@@ -276,7 +275,7 @@
 <script>
 
     if(sessionStorage.length == 0){
-
+        window.location='../index.html'
     }else{
         logado[0].style.display ='block';
         logado[1].style.display ='block';
@@ -287,7 +286,7 @@
 
     }
     function sair(){
-        if(perfil.value == 'index.html'){
+        if(perfil.value == '../index.html'){
         sessionStorage.clear()
         }
     }

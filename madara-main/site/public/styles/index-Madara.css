@@ -68,7 +68,7 @@ html {
     background-color: rgb(44, 13, 49);
     display: flex;
     margin: auto;
-    margin-top: 100px;
+    margin-top: 50px;
     border-radius: 10px;
     box-shadow: 10px 10px black;
 }
@@ -171,6 +171,12 @@ html {
 .social2 .container a{
     text-decoration: none;
     color: red;
+
+}
+.social2 .container #aqui2{
+    text-decoration: none;
+    color: red;
+    cursor: pointer;
 
 }
 

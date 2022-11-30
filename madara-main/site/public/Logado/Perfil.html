@@ -15,8 +15,8 @@
 <body>
     <div class="social" id="parte1" style="display: block;">
         <h1 id="tituloPerfil">Sorteio de imagem de perfil</h1>
-        Sorteie sua foto de perfil !!, qual fase do madara voce seria ?
-        Você só tera 1 chance de sorteio<button onclick="analisar()">Sortear</button>
+        <span id="dialogo">Sorteie sua foto de perfil !! qual fase do madara voce seria ?
+        Você só tera 1 chance de sorteio</span><button  id='botao_sorteio' onclick="analisar()">Sortear</button>
         <div class="banner">
             <div class="hello">
                 <h3>Bem vindo, <span id="b_usuario">usuário</span>!</h3>
@@ -45,24 +45,24 @@
                 <li id="logo">Uchiha Madara</li>
                 <div class="navbar">
                     <li><a href="../index.html">Inicio</a></li>
-                    <li><a href="../Batalhas.html">Batalhas</a></li>
-                    <li id="logado" style="display: none;"><a href="../Logado/Grafico.html">grafico</a></li>
-                    <li><a href="galeria.html">Galeria</a></li>
-                    <li id="logado" style="display: none;"><a href="../Logado/Quiz-madara.html">Quiz</a></li>
-                    <li id="deslogado" style="display: block;"><a href="Login-Madara.html">Login</a></li>
-                    <li id="deslogado" style="display: block;"><a href="Cadastrar-Madara.html">Cadastrar</a></li>
+                    <li id="logado" style="display: none;"><a href="Grafico.html">grafico</a></li>
+                    <li><a href="../galeria.html">Galeria</a></li>
+                    <li id="logado" style="display: none;"><a href="Quiz-madara.html">Quiz</a></li>
+                    <li id="deslogado" style="display: block;"><a href="../Login-Madara.html">Login</a></li>
+                    <li id="deslogado" style="display: block;"><a href="../Cadastrar-Madara.html">Cadastrar</a></li>
                     <li onclick="sair()"><a href="../Login-Madara.html">Sair</a></li>
                 </div>
             </div>
         </div>
         <div class="container2">
-            <h3>Bem vindo, <span id="a_usuario">usuário</span>!</h3>
+            <span id="bemvindo">Bem vindo, <span id="a_usuario">usuário</span>!</span>
             <h1>Perfil</h1>
             <div class="legenda">
                 <span id="suafoto"></span>
                 <ul>
-                    <li>Nome:<span id="nome"></span></li>
-                    <li>Email:<span id="email"></span></li>
+                    <li id="nome_legenda">Nome:<span id="nome"></span></li>
+                    <li  id="email_legenda">Email:<span id="email"></span></li>
+                    <li id="frase_efeito">"Escute... Neste mundo, sempre que houver uma luz, haverá também sombras. Enquanto o conceito de vencedores existir também deve haver perdedores. O desejo egoísta de querer manter a paz provoca guerras e o ódio nasce para proteger o amor."</li>
                 </ul>
             </div>
         </div>

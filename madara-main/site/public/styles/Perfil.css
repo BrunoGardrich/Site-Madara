@@ -3,11 +3,26 @@ body {
 }
 
 
+
 .social {
   width: 100vw;
   height: 100vh;
-  background-color: rgb(255, 191, 0);
+    animation: gradient 7s ease infinite;
+    background:linear-gradient(-45deg, red,rgb(233, 199, 199), purple, red) no-repeat;
+    background-size: 300% 300%; 
+    background-color: black;
 }
+@keyframes gradient{
+    0%{
+        background-position: 0 50%;
+    }
+    50%{
+        background-position: 100% 50%;}
+    100%{
+        background-position: 0 50%;
+    }
+} 
+
 
 #tituloPerfil {
   font-weight: 900;
@@ -17,16 +32,30 @@ body {
   font-family: cursive;
 }
 
+#dialogo{
+  display: flex;
+  justify-content: center;
+  font-family: cursive;
+}
+
+#botao_sorteio{
+  display: flex;
+  justify-content: center;
+  margin: auto;
+}
+
 .social .container {
-  border: solid 3px blue;
+  /* border: solid 3px blue; */
   display: flex;
   flex-wrap: wrap;
   background-color: #666;
+  width: 95%;
+  margin: auto;
 
 }
 
 .social .container ul {
-  border: solid 3px yellow;
+  /* border: solid 3px yellow; */
 
   list-style: none;
   display: flex;
@@ -35,7 +64,7 @@ body {
 
 
 .social .container .foto {
-  border: solid 3px black;
+  /* border: solid 3px black; */
   width: 200px;
   height: 150px;
   padding: 19px;
@@ -53,9 +82,6 @@ body {
   margin: 0;
 }
 
-
-
-
 .social2 .container2 {
   background-color: white;
   margin: 0;
@@ -66,11 +92,38 @@ body {
   justify-content: center;
 
 }
+.social2 .container2 #bemvindo{
+  font-size: 30px;
+  font-weight: 900;
+}
 
 .social2 .container2 .legenda {
   display: flex;
   border: purple 3px solid;
   height: 100%;
+  background: rgb(109, 92, 111);
+}
+
+.legenda #nome_legenda{
+  list-style: none;
+  font-weight: 900;
+  font-size: 30px;
+  margin-top: 30px;
+}
+.legenda #nome{
+  font-size: 30px;
+}
+.legenda #email_legenda{
+  list-style: none;
+  font-weight: 900;
+  font-size: 30px;
+  margin-top: 30px;
+}
+
+#frase_efeito{
+  margin-top: 100px;
+  list-style: none;
+  font-size: 30px;
 }
 
 #suafoto {
@@ -138,7 +191,7 @@ li #aqui {
   font-size: xx-large;
   font-weight: 900;
   align-items: center;
-  color: rgb(152, 0, 0);
+  color: rgb(193, 0, 0);
   position: absolute;
   font-family: fantasy;
 

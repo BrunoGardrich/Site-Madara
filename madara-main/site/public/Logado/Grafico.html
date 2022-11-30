@@ -20,21 +20,17 @@
 
 <body>
     <div class="banner">
-        <video autoplay loop muted>
-            <source src="assets/yt5s.io-Madara Uchiha 4K live wallpaper _)))-(1080p60).mp4" type="video/mp4">
-        </video>
         <div class="header">
             <div class="container">
                 <li id="logo">Uchiha Madara</li>
                 <div class="navbar">
-                    <li><a href="index_logado.html">Inicio</a></li>
-                    <li><a href="Batalhas_logado.html">Batalhas</a></li>
+                    <li><a href="../index.html">Inicio</a></li>
                     <li id="logado" style="display: none;">grafico</li>
-                    <li ><a href="galeria_logado.html">Galeria</a></li>
+                    <li ><a href="../galeria.html">Galeria</a></li>
                     <li id="logado" style="display: none;"><a href="Quiz-madara.html">Quiz</a></li>
                     <li>|</li>
-                    <li id="deslogado" style="display: block;"><a href="Login-Madara.html">Login</a></li>
-                    <li id="deslogado" style="display: block;"><a href="Cadastrar-Madara.html">Cadastrar</a></li>
+                    <li id="deslogado" style="display: block;"><a href="../Login-Madara.html">Login</a></li>
+                    <li id="deslogado" style="display: block;"><a href="../Cadastrar-Madara.html">Cadastrar</a></li>
                     <li id="logado" style="display: none;">Olá, <span id="logado_usuario"></span></a></li>
                     <li id="logado" style="display: none;"><select name="perfil1" id="perfil" onclick="sair()" onchange="location.href=this.value">
                         <option value=""></option>
@@ -50,7 +46,7 @@
 
     <div class="social">
         <div class="hello">
-            <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
+            <h3>Olá, <span id="b_usuario">usuário</span>! Veja o gráfico dos ultimos 10 participantes do Quiz.</h3>
         </div>
 
         <div class="dashboard">
@@ -84,7 +80,7 @@
     var ids = []
 
     if(sessionStorage.length == 0){
-
+        window.location='../index.html'
     }else{
         logado[0].style.display ='block';
         logado[1].style.display ='block';

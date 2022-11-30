@@ -27,24 +27,6 @@ body {
    
 }
 
-
-/* .social .container {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    margin: auto;
-    width: 80%;
-    margin-top: 300px;
-    margin-bottom: 50px;
-}
-
-
-.social .quiz {
-    border: solid 3px black;
-    width: 800px;
-    height: 400px;
-} */
-
 .containerall {
     border: #d44950 solid 3px;
     height: 100%;
@@ -129,12 +111,6 @@ button {
     box-shadow: 1px 1px 5px rgba(255, 255, 255, .4) inset;
 }
 
-/* Quando item selecionado */
-/* .social .container2 label input[type=checkbox]:checked+span {
-    background-color: red;
-    border-color: red;
-    color: #fff;
-} */
 .social .container2 label input[class="correto"]:checked+span{
     background-color: green;
     border-color: green;

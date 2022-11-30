@@ -26,7 +26,6 @@
                 <li id="logo">Uchiha Madara</li>
                 <div class="navbar">
                     <li id="aqui">Inicio</li>
-                    <li><a href="Batalhas.html">Batalhas</a></li>
                     <li id="logado" style="display: none;"><a href="../Logado/Grafico.html">grafico</a></li>
                     <li><a href="galeria.html">Galeria</a></li>
                     <li id="logado" style="display: none;"><a href="../Logado/Quiz-madara.html">Quiz</a></li>
@@ -281,8 +280,8 @@
     <div class="allsocial2">
         <div class="social2" data-animar="right">
             <div class="container" data-animado="left">
-                Veja Como foi as principais Lutas de Madara
-            <a href="Batalhas.html">Clique aqui!</a>
+                Acesse seu perfil com uma foto só sua do Madara.
+                <span id="aqui2" onclick="analisar2()">Clique aqui!</span>
 
 
             </div>
@@ -335,6 +334,15 @@
 
     }else{
         window.location ="../Logado/Quiz-madara.html"
+    }
+
+}
+    function analisar2() {
+    if(sessionStorage.length == 0){
+        alert("Voce precisa estar logado para acessar o Perfil!")
+
+    }else{
+        window.location ="../Logado/Perfil.html"
     }
 
 }
